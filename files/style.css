@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Migra"; /* Nome personalizado */
+  src: url("./assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2"),
+    url("./assets/font/MigraItalic-ExtralightItalic.ttf") format("truetype");
+  font-weight: normal; /* Peso da fonte (opcional) */
+  font-style: italic; /* Estilo (normal ou itálico) */
+}
+@font-face {
+  font-family: "Ogg";
+  src: url("./assets/font/Ogg-LightItalic-BF646c18fc49421.otf") format("otf"),
+    url("./assets/font/Ogg-LightItalic-BF646c18fc3aa5c.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Canopee";
+  src: url("./assets/font/canopee-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url("./assets/font/Aeonik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body.no-scroll {
+  overflow: hidden; /* Desativa a rolagem */
+  height: 100vh; /* Mantém a altura da viewport */
+}
+.loading-conteiner {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 9999;
+  display: flex;
+}
+body {
+  background: #000000;
+}
+.left-part-loading,
+.right-part-loading {
+  width: 50%;
+  height: 100vh;
+  background: #000000fd;
+  position: relative;
+  top: 0;
+}
+.left-part-loading {
+  left: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.right-part-loading {
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.padding-all-content {
+  width: 100%;
+  padding: 0 10rem;
+}
+.carousel-init {
+  width: 100%; /* Ocupa 100% da largura disponível */
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden; /* Impede a rolagem */
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 9999;
+}
+
+.top-carousel,
+.center-carousel,
+.bottom-carousel {
+  height: 33.3%; /* Divide a altura em 3 partes iguais */
+  display: flex;
+  justify-content: center; /* Alinha o conteúdo à esquerda */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 20vw; /* Tamanho da fonte responsivo */
+  font-family: "Canopee";
+  letter-spacing: 2vw; /* Espaçamento entre letras responsivo */
+  font-weight: lighter;
+
+  white-space: nowrap; /* Impede a quebra de linha */
+  position: relative;
+  top: 20px;
+}
+
+.name-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage {
+  width: 100%;
+  height: 100vh;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
+}
+.homepage::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.p-homepage {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 9998d;
+  color: rgb(119, 119, 119);
+  font-size: 20px;
+  font-family: "Aeonik";
+}
+.content-logo {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  right: 50%;
+  transform: translateX(50%);
+  padding: 0 4rem;
+  opacity: 0;
+}
+.line-logo {
+  width: 40px;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.logo-1,
+.logo-3,
+.logo-5 {
+  transform: rotate(45deg);
+  margin-left: -12px;
+  animation-name: movelogo1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.logo-2,
+.logo-4 {
+  transform: rotate(-45deg);
+  margin-left: -12px;
+  animation-name: movelogo2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes movelogo1 {
+  0% {
+    transform: rotate(0deg);
+    margin-left: 0px;
+  }
+  25% {
+  }
+  50% {
+    transform: rotate(45deg);
+    margin-left: -12px;
+  }
+  75% {
+  }
+  100% {
+    transform: rotate(0deg);
+    margin-left: 0px;
+  }
+}
+@keyframes movelogo2 {
+  0% {
+    transform: rotate(0deg);
+    margin-left: 0px;
+  }
+  25% {
+  }
+  50% {
+    transform: rotate(-45deg);
+    margin-left: -12px;
+  }
+  75% {
+  }
+  100% {
+    transform: rotate(0deg);
+    margin-left: 0px;
+  }
+}
+.fixed-min-logo {
+  padding: 0 0.1em;
+  position: fixed;
+  color: #4b3e3e;
+  font-size: 180px;
+  font-family: "Poppins";
+  z-index: 9999;
+  mix-blend-mode: difference;
+  bottom: -40px;
+}
+.name-a {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.name-w {
+  right: 0%;
+}
+.slider {
+  width: 100%;
+  background-color: #000000;
+  height: 100vh;
+}
+.carousel-init::after {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  z-index: 11000;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.carousel-init::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  z-index: 11000;
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 10000;
+  font-size: 20px;
+}
+
+.menu {
+  left: 0;
+  width: 100%;
+  height: 0; /* Ajuste a altura conforme necessário: 0 */
+  top: 0;
+  position: fixed;
+  z-index: 9999;
+  background: rgba(212, 205, 205, 0.685);
+  backdrop-filter: blur(100px);
+  display: flex;
+  overflow: hidden;
+}
+.part-left-menu,
+.part-right-menu {
+  width: 50%;
+  height: 50%;
+  font-family: "Canopee";
+  flex-direction: column;
+  min-height: 100svh;
+  z-index: 5;
+  position: relative;
+  p {
+    color: #fff;
+    font-weight: 100;
+  }
+  .a-menu p:hover {
+    color: #45004e;
+  }
+}
+.part-left-menu {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(212, 205, 205, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+  a {
+    text-decoration: none;
+  }
+}
+.part-right-menu {
+  position: relative;
+}
+.part-right-menu video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(100%) invert(100%) sepia(100%) saturate(0%)
+    hue-rotate(0deg);
+}
+.a-menu {
+  gap: 20px;
+  width: min-content;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  svg {
+    transform: translateX(-100%);
+    transition: 0.5s all;
+  }
+  p {
+    font-size: 6.5vw;
+    transition: 0.5s all;
+    transform: translateX(-64px) translateY(-100%);
+  }
+}
+.a-menu:hover {
+  svg {
+    transform: translateX(0);
+  }
+  p {
+    transform: translateX(0);
+  }
+}
+#text-tcc {
+  position: absolute;
+  bottom: 20px;
+  font-family: "Poppins";
+}
+@media screen and (max-width: 600px) {
+  .fixed-min-logo {
+    font-size: 20vw;
+    bottom: 0;
+  }
+  .p-homepage {
+    font-size: 3vw;
+  }
+  .menu-toggle {
+    width: 10vw;
+  }
+  .part-left-menu {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin-left: 0;
+  }
+  .part-right-menu {
+    display: none;
+  }
+  #text-tcc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .a-menu {
+    p {
+      font-size: 20vw;
+    }
+  }
+}
