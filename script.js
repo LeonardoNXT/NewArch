@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   lenis.stop();
   document.body.classList.add("no-scroll");
 });
+gsap.registerPlugin(ScrollTrigger);
 const word2 = document.querySelectorAll(".word2");
 const word3 = document.querySelectorAll(".word3");
 const word4 = document.querySelectorAll(".word4");
@@ -101,6 +102,17 @@ gsap.from(word5, 1, {
     const loadingContent = document.querySelector(".loading-conteiner");
     carouselInit.remove();
     loadingContent.remove();
+  },
+});
+gsap.to(word5, 2, {
+  bottom: "110%",
+  filter: "blur(5px)",
+  ease: "power3.inOut",
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".slider",
+    start: "top bottom",
+    scrub: true,
   },
 });
 gsap.from(".menu-toggle", 1, {
@@ -195,3 +207,93 @@ selection.addEventListener("click", () => {
   }
   togglemenu = !togglemenu;
 });
+
+gsap.to(".background-video", {
+  y: "25%",
+  filter: "blur(20px)",
+  scale: -0,
+  opacity: 0.3,
+  scrollTrigger: {
+    trigger: ".homepage",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
+gsap.from(".video-slider", {
+  opacity: 0,
+  scale: 20,
+});
+gsap.to(".slider", {
+  y: "-10%",
+  opacity: 0,
+  filter: "blur(20px)",
+  scrollTrigger: {
+    trigger: ".valuepage",
+    start: "top bottom", // Começa quando o topo do .slider atinge o topo da viewport
+    end: "30% bottom", // Termina aos 33% da viewport
+    scrub: 1, // Sincroniza a animação com a rolagem
+  },
+});
+gsap.to(".video-slider", {
+  opacity: 1,
+  scale: 1,
+  scrollTrigger: {
+    trigger: ".slider",
+    start: "top top", // Começa quando o topo do .slider atinge o topo da viewport
+    end: "bottom bottom", // Termina aos 33% da viewport
+    scrub: 1, // Sincroniza a animação com a rolagem
+  },
+});
+
+gsap.from(".text-slider-1", {
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".slider",
+    start: "top top", // Começa quando o topo do .slider atinge o topo da viewport
+    end: "12.5% top", // Termina aos 33% da viewport
+    scrub: 1, // Sincroniza a animação com a rolagem
+  },
+});
+gsap.to(".text-slider-1", {
+  color: "transparent",
+  scrollTrigger: {
+    trigger: ".slider",
+    start: "12.5% top", // Começa quando o topo do .slider atinge o topo da viewport
+    end: "25% top", // Termina aos 33% da viewport
+    scrub: 1, // Sincroniza a animação com a rolagem
+  },
+});
+
+// Animação para .text-slider-2 aparecer
+gsap.to(".text-slider-2", {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".slider",
+    start: "25% top", // Começa aos 33% da viewport
+    end: "37.5% top", // Termina aos 49.5% da viewport
+    scrub: 1, // Sincroniza a animação com a rolagem
+  },
+});
+
+// Animação para .text-slider-2 desaparecer
+gsap.to(".text-slider-2", {
+  color: "transparent",
+  delay: 0.5,
+  scrollTrigger: {
+    trigger: ".slider",
+    start: "37.5% top", // Começa aos 49.5% da viewport
+    end: "50% top", // Termina aos 66% da viewport
+    scrub: 1, // Sincroniza a animação com a rolagem
+  },
+});
+gsap.to(".text-slider-3", {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".slider",
+    start: "50% top", // Começa aos 33% da viewport
+    end: "75% top", // Termina aos 49.5% da viewport
+    scrub: 1, // Sincroniza a animação com a rolagem
+  },
+});
+// Animação para .text-slider-2 desaparecer

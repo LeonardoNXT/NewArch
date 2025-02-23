@@ -111,15 +111,17 @@ body {
   justify-content: center;
 }
 .homepage {
+  position: relative; /* Adicione isso */
+  height: 100vh; /* Garante que o contêiner ocupe a tela inteira */
+  overflow: hidden; /* Evita barras de rolagem indesejadas */
+}
+
+.background-video {
   width: 100%;
-  height: 100vh;
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    z-index: -1;
-  }
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
 }
 .homepage::before {
   content: "";
@@ -227,11 +229,6 @@ body {
 .name-w {
   right: 0%;
 }
-.slider {
-  width: 100%;
-  background-color: #000000;
-  height: 100vh;
-}
 .carousel-init::after {
   content: "";
   width: 100%;
@@ -282,7 +279,7 @@ body {
   height: 50%;
   font-family: "Canopee";
   flex-direction: column;
-  min-height: 100svh;
+  min-height: 100vh;
   z-index: 5;
   position: relative;
   p {
@@ -321,6 +318,7 @@ body {
   filter: brightness(100%) invert(100%) sepia(100%) saturate(0%)
     hue-rotate(0deg);
 }
+
 .a-menu {
   gap: 20px;
   width: min-content;
@@ -353,6 +351,91 @@ body {
   bottom: 20px;
   font-family: "Poppins";
 }
+.slider {
+  width: 100%;
+  height: 300vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.text-center-homepage {
+  position: relative;
+  height: fit-content;
+  line-height: 1.2;
+  will-change: transform;
+  font-weight: 400;
+  grid-column: 4 / span 5;
+  font-family: "Aeonik", sans-serif;
+  overflow: hidden;
+}
+
+.slider-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  overflow: hidden;
+}
+.slider-content p {
+  color: #ffffff;
+  mix-blend-mode: difference;
+  font-weight: 100;
+  font-size: 7vw;
+  text-align: center;
+  font-family: "aeronik", sans-serif;
+  line-height: 1.2;
+  .ogg {
+    font-family: "Ogg";
+  }
+  .migra {
+    font-family: "Migra";
+  }
+  .canopee {
+    font-family: "Canopee";
+  }
+  .aeonik {
+    font-family: "Aeonik";
+  }
+}
+.text-i {
+  position: absolute;
+}
+.text-slider-2,
+.text-slider-3 {
+  opacity: 0;
+}
+.video-slider {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(20%)
+    blur(10px);
+  opacity: 0;
+}
+
+.valuepage {
+  width: 100%;
+  height: 300vh;
+}
+.valuepage-title {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12vw;
+  font-weight: 100;
+  font-family: "migra", sans-serif;
+  color: #fff;
+}
 @media screen and (max-width: 600px) {
   .fixed-min-logo {
     font-size: 20vw;
@@ -377,6 +460,11 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .slider-content p {
+    .logo-empresa {
+      font-size: 20vw;
+    }
   }
   .a-menu {
     p {
