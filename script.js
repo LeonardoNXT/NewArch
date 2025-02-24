@@ -224,15 +224,14 @@ gsap.from(".video-slider", {
   opacity: 0,
   scale: 20,
 });
-gsap.to(".slider", {
-  y: "-10%",
+gsap.from(".image-gallery", {
   opacity: 0,
   filter: "blur(20px)",
   scrollTrigger: {
     trigger: ".valuepage",
-    start: "top bottom", // Começa quando o topo do .slider atinge o topo da viewport
-    end: "30% bottom", // Termina aos 33% da viewport
-    scrub: 1, // Sincroniza a animação com a rolagem
+    start: "top bottom",
+    end: "35% bottom",
+    scrub: 1,
   },
 });
 gsap.to(".video-slider", {
@@ -243,6 +242,27 @@ gsap.to(".video-slider", {
     start: "top top", // Começa quando o topo do .slider atinge o topo da viewport
     end: "bottom bottom", // Termina aos 33% da viewport
     scrub: 1, // Sincroniza a animação com a rolagem
+  },
+});
+gsap.from(".image-gallery", {
+  scale: 0.5,
+  scrollTrigger: {
+    trigger: ".valuepage",
+    start: "10% bottom",
+    end: "bottom bottom",
+    scrub: 1,
+  },
+});
+gsap.from(".end-grid, .firsh-grid", {
+  y: "200",
+});
+gsap.to(".end-grid, .firsh-grid", {
+  y: "-200",
+  scrollTrigger: {
+    trigger: ".valuepage",
+    start: "top bottom",
+    end: "bottom bottom",
+    scrub: 1,
   },
 });
 
@@ -297,3 +317,95 @@ gsap.to(".text-slider-3", {
   },
 });
 // Animação para .text-slider-2 desaparecer
+gsap.from(".word6", {
+  y: "100%",
+  opacity: 0,
+  stagger: 0.4,
+  scrollTrigger: {
+    trigger: ".value-top-conteiner",
+    start: "top bottom",
+    end: "top top",
+    scrub: 1,
+  },
+});
+
+gsap
+  .matchMedia()
+  .add("(max-width: 768px)", () => {
+    // Configurações para mobile
+    gsap.set(".value-img-config", {
+      y: "-50%",
+    });
+    gsap.to(".value-img-config", {
+      y: "50%",
+      ease: "power3.inOut",
+      scrollTrigger: {
+        trigger: ".value-bottom-conteiner",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+    gsap.from(".value-top-bottom-img", {
+      width: "30%", // Estado inicial
+    });
+    gsap.to(".value-top-bottom-img", {
+      width: "90%", // Estado final para mobile
+      scrollTrigger: {
+        trigger: ".value-bottom-conteiner",
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: 1,
+      },
+    });
+  })
+  .add("(min-width: 769px)", () => {
+    // Configurações para desktop
+    gsap.set(".value-img-config", {
+      y: "-30%",
+    });
+    gsap.to(".value-img-config", {
+      y: "20%",
+      ease: "power3.inOut",
+      scrollTrigger: {
+        trigger: ".value-bottom-conteiner",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+    gsap.from(".value-top-bottom-img", {
+      width: "10%", // Estado inicial
+    });
+    gsap.to(".value-top-bottom-img", {
+      width: "30%", // Estado final para desktop
+      scrollTrigger: {
+        trigger: ".value-bottom-conteiner",
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: 1,
+      },
+    });
+  });
+gsap.to(".left-position", {
+  x: "-100%",
+  y: "50%",
+  ease: "power3.inOut",
+  scrollTrigger: {
+    trigger: ".value-bottom-conteiner",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
+gsap.to(".right-position", {
+  x: "100%",
+  y: "50%",
+  ease: "power3.inOut",
+  scrollTrigger: {
+    trigger: ".value-bottom-conteiner",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
