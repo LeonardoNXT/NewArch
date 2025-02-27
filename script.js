@@ -409,3 +409,46 @@ gsap.to(".right-position", {
     scrub: 1,
   },
 });
+
+function changeLanguage(event) {
+  // Previne o comportamento padrão do link
+  event.preventDefault();
+
+  gsap.to(".loading-menu-conteiner", {
+    zIndex: 10000,
+  });
+  gsap.to(".main, .menu", 1, {
+    filter: "blur(5px)",
+    ease: "power3.inOut",
+  });
+  gsap.to(".left-part-loading-menu", 2, {
+    left: "0%",
+    ease: "power3.inOut",
+  });
+  gsap.to(".right-part-loading-menu", 2, {
+    right: "0%",
+    ease: "power3.inOut",
+  });
+  gsap.to(".right-part-loading-menu,.left-part-loading-menu", 1, {
+    backgroundColor: "#000",
+    delay: 2,
+    ease: "power3.inOut",
+
+    onComplete: () => {
+      if (
+        window.location.pathname === "/index.html" ||
+        window.location.pathname === "/"
+      ) {
+        // Redireciona para a versão em português se estiver na raiz ou no index.html
+        window.location.href = "./pt-br/index.html";
+      } else {
+        // Redireciona para a página inicial em outros casos
+        window.location.href = "/";
+      }
+    },
+  });
+
+  // Aqui você pode adicionar a lógica para mudar o idioma
+  console.log("Idioma alterado!");
+}
+console.log(window.location.pathname);
