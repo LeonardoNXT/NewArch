@@ -668,8 +668,22 @@ body {
 }
 .productpage {
   width: 100%;
-  height: 100vh;
   background-color: #000000;
+  position: relative;
+}
+.product-page-1 {
+  width: 100%;
+  height: 900vh;
+  position: relative;
+  display: flex;
+}
+
+.video-background {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: sticky;
+  top: 0;
 }
 @media screen and (max-width: 600px) {
   .value-bottom-right {

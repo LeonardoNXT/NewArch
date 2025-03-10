@@ -440,7 +440,7 @@ function changeLanguage(event) {
         window.location.pathname === "/"
       ) {
         // Redireciona para a versão em português se estiver na raiz ou no index.html
-        window.location.href = "./pt-br/index.html";
+        window.location.href = "./pt-br/";
       } else {
         // Redireciona para a página inicial em outros casos
         window.location.href = "/";
@@ -452,3 +452,14 @@ function changeLanguage(event) {
   console.log("Idioma alterado!");
 }
 console.log(window.location.pathname);
+
+gsap.to(".img-product", {
+  scale: 2,
+  ease: "power3.inOut",
+  scrollTrigger: {
+    trigger: ".productpage",
+    start: "top bottom",
+    end: "bottom bottom",
+    scrub: 1,
+  },
+});
