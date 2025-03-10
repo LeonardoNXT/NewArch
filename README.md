@@ -1,7 +1,5 @@
 # NEWARCH - Inovação Tecnológica e Sustentabilidade
 
-![Deploy](./files/assets/img/NewArch.png)
-
 Bem-vindo ao repositório oficial da **NEWARCH**, uma empresa fictícia de inovação tecnológica que combina sustentabilidade, automação e design moderno para criar soluções que moldam o futuro. Este projeto foi desenvolvido como parte do meu Trabalho de Conclusão de Curso (TCC) e representa uma visão de como a tecnologia pode ser aliada à sustentabilidade para construir um mundo melhor.
 
 ## 🚀 Visão Geral
@@ -66,7 +64,7 @@ A **NEWARCH** é uma empresa fictícia que representa o futuro da tecnologia sus
 ## 🌐 Como Visualizar
 
 Você pode acessar o projeto online através do link de deploy:  
-🔗 **[Acessar Portfólio](https://newarch.netlify.app/)**
+🔗 **[Acessar Deploy](https://newarch.netlify.app/)**
 
 Ou, se preferir, clone o repositório e abra o arquivo `index.html` no seu navegador:
 
@@ -76,6 +74,10 @@ cd NEWARCH
 ```
 
 Ou acesse o link do deploy (se disponível).
+
+---
+
+![Deploy](./files/assets/img/NewArch.png)
 
 ---
 
