@@ -27,17 +27,22 @@ Este projeto é uma representação visual da marca, com um site moderno e inter
 ## 📁 Estrutura do Projeto
 
 ```
-/NEWARCH
+/NEWARCH-FINAL
 │
 ├── /files
-│   ├── /assets
-│   │   ├── /img
-│   │   └── /video
-│   ├── style.css
-│   └── script.js
+│ ├── /assets
+│ │ ├── /font
+│ │ ├── /img
+│ │ └── /video
+│ └── style.css
+│
+├── /pt-br
+│ └── index.html
 │
 ├── index.html
+├── script.js
 └── README.md
+
 ```
 
 ## 🌐 Sobre a NEWARCH
