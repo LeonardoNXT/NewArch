@@ -2,7 +2,7 @@ let lenis; // Declara a variável globalmente
 
 document.addEventListener("DOMContentLoaded", () => {
   lenis = new Lenis({
-    lerp: 0.1,
+    lerp: 0.05,
     smoothWheel: true,
   });
 
@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   requestAnimationFrame(raf);
 
-  // Movendo as chamadas para dentro do evento DOMContentLoaded
   lenis.stop();
   document.body.classList.add("no-scroll");
 });
@@ -54,12 +53,10 @@ gsap.from(word4, 1, {
 });
 // Seleciona todos os elementos com a classe .name-logo
 
-// Filtra o elemento que NÃO deve ser animado (o que tem a classe .center)
 const namelogoFiltered = Array.from(namelogo).filter(
   (element) => !element.classList.contains("center")
 );
 
-// Aplica a animação apenas aos elementos filtrados
 gsap.to(namelogoFiltered, {
   duration: 1,
   opacity: 0,
@@ -239,9 +236,9 @@ gsap.to(".video-slider", {
   scale: 1,
   scrollTrigger: {
     trigger: ".slider",
-    start: "top top", // Começa quando o topo do .slider atinge o topo da viewport
-    end: "bottom bottom", // Termina aos 33% da viewport
-    scrub: 1, // Sincroniza a animação com a rolagem
+    start: "top top",
+    end: "bottom bottom",
+    scrub: 1,
   },
 });
 gsap.from(".image-gallery", {
@@ -265,58 +262,64 @@ gsap.to(".end-grid, .firsh-grid", {
     scrub: 1,
   },
 });
-
+const backgroundVideo = document.querySelector(".background-video");
+backgroundVideo.play();
 gsap.from(".text-slider-1", {
   opacity: 0,
   scrollTrigger: {
     trigger: ".slider",
-    start: "top top", // Começa quando o topo do .slider atinge o topo da viewport
-    end: "12.5% top", // Termina aos 33% da viewport
-    scrub: 1, // Sincroniza a animação com a rolagem
+    start: "top top",
+    end: "12.5% top",
+    scrub: 1,
+    onUpdate: (self) => {
+      if (self.progress > 0.5) {
+        backgroundVideo.pause();
+      } else {
+        backgroundVideo.play();
+      }
+    },
   },
 });
 gsap.to(".text-slider-1", {
   color: "transparent",
   scrollTrigger: {
     trigger: ".slider",
-    start: "12.5% top", // Começa quando o topo do .slider atinge o topo da viewport
-    end: "25% top", // Termina aos 33% da viewport
-    scrub: 1, // Sincroniza a animação com a rolagem
+    start: "12.5% top",
+    end: "25% top",
+    scrub: 1,
   },
 });
 
-// Animação para .text-slider-2 aparecer
 gsap.to(".text-slider-2", {
   opacity: 1,
   scrollTrigger: {
     trigger: ".slider",
-    start: "25% top", // Começa aos 33% da viewport
-    end: "37.5% top", // Termina aos 49.5% da viewport
-    scrub: 1, // Sincroniza a animação com a rolagem
+    start: "25% top",
+    end: "37.5% top",
+    scrub: 1,
   },
 });
 
-// Animação para .text-slider-2 desaparecer
 gsap.to(".text-slider-2", {
   color: "transparent",
   delay: 0.5,
   scrollTrigger: {
     trigger: ".slider",
-    start: "37.5% top", // Começa aos 49.5% da viewport
-    end: "50% top", // Termina aos 66% da viewport
-    scrub: 1, // Sincroniza a animação com a rolagem
+    start: "37.5% top",
+    end: "50% top",
+    scrub: 1,
   },
 });
 gsap.to(".text-slider-3", {
   opacity: 1,
   scrollTrigger: {
     trigger: ".slider",
-    start: "50% top", // Começa aos 33% da viewport
-    end: "75% top", // Termina aos 49.5% da viewport
-    scrub: 1, // Sincroniza a animação com a rolagem
+    start: "50% top",
+    end: "75% top",
+    scrub: 1,
   },
 });
-// Animação para .text-slider-2 desaparecer
+
 gsap.from(".word6", {
   y: "100%",
   opacity: 0,
@@ -332,7 +335,6 @@ gsap.from(".word6", {
 gsap
   .matchMedia()
   .add("(max-width: 768px)", () => {
-    // Configurações para mobile
     gsap.set(".value-img-config", {
       y: "-50%",
     });
@@ -347,10 +349,10 @@ gsap
       },
     });
     gsap.from(".value-top-bottom-img", {
-      width: "30%", // Estado inicial
+      width: "30%",
     });
     gsap.to(".value-top-bottom-img", {
-      width: "90%", // Estado final para mobile
+      width: "90%",
       scrollTrigger: {
         trigger: ".value-bottom-conteiner",
         start: "top bottom",
@@ -360,7 +362,6 @@ gsap
     });
   })
   .add("(min-width: 769px)", () => {
-    // Configurações para desktop
     gsap.set(".value-img-config", {
       y: "-30%",
     });
@@ -375,10 +376,10 @@ gsap
       },
     });
     gsap.from(".value-top-bottom-img", {
-      width: "10%", // Estado inicial
+      width: "10%",
     });
     gsap.to(".value-top-bottom-img", {
-      width: "30%", // Estado final para desktop
+      width: "30%",
       scrollTrigger: {
         trigger: ".value-bottom-conteiner",
         start: "top bottom",
@@ -411,7 +412,6 @@ gsap.to(".right-position", {
 });
 
 function changeLanguage(event) {
-  // Previne o comportamento padrão do link
   event.preventDefault();
 
   gsap.to(".loading-menu-conteiner", {
@@ -439,16 +439,13 @@ function changeLanguage(event) {
         window.location.pathname === "/index.html" ||
         window.location.pathname === "/"
       ) {
-        // Redireciona para a versão em português se estiver na raiz ou no index.html
         window.location.href = "./pt-br/";
       } else {
-        // Redireciona para a página inicial em outros casos
         window.location.href = "/";
       }
     },
   });
 
-  // Aqui você pode adicionar a lógica para mudar o idioma
   console.log("Idioma alterado!");
 }
 console.log(window.location.pathname);
@@ -458,6 +455,199 @@ gsap.to(".img-product", {
   ease: "power3.inOut",
   scrollTrigger: {
     trigger: ".productpage",
+    start: "top bottom",
+    end: "bottom bottom",
+    scrub: 1,
+  },
+});
+
+gsap.to(".parent", {
+  gap: "2vw",
+  duration: 1.5,
+  ease: "power3.inOut",
+  scrollTrigger: {
+    trigger: ".aboutpage2",
+    start: "top bottom",
+    end: "bottom bottom",
+  },
+});
+gsap.set(".img-abt-2-item-1, .img-abt-2-item-2", {
+  scale: 1.5,
+  yPercent: -10,
+});
+
+gsap.to(".img-abt-2-item-1, .img-abt-2-item-2", {
+  yPercent: 10,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".aboutpage2",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
+
+// mouse-config
+const mouse = {
+  mouseX: 0,
+  mouseY: 0,
+};
+let previewX = 0;
+let previewY = 0;
+window.addEventListener("mousemove", (e) => {
+  mouse.mouseX = e.clientX;
+  mouse.mouseY = e.clientY;
+});
+const tick = () => {
+  previewX += (mouse.mouseX - previewX) / 17;
+  previewY += (mouse.mouseY - previewY) / 17;
+  gsap.set(".cursor", {
+    x: previewX,
+    y: previewY,
+  });
+  gsap.set(".learn-more", {
+    x: previewX,
+    y: previewY,
+  });
+  requestAnimationFrame(tick);
+};
+tick();
+
+const historySection = document.querySelector(".img-abt-2-item-2");
+historySection.addEventListener("mouseenter", () => {
+  gsap.to(".cursor", {
+    scale: 2,
+  });
+  gsap.to(".learn-more", {
+    scale: 1,
+  });
+});
+
+historySection.addEventListener("mouseleave", () => {
+  gsap.to(".cursor", {
+    scale: 1,
+  });
+  gsap.to(".learn-more", {
+    scale: 0,
+  });
+});
+
+// ProductPage
+let heighttela = window.innerHeight;
+window.addEventListener("resize", () => {
+  heighttela = window.innerHeight;
+});
+gsap.to(".text-eco-place", {
+  top: "90%",
+  ease: "linear",
+  scrollTrigger: {
+    trigger: ".eco-project",
+    start: `${heighttela}px bottom`,
+    end: `${heighttela * 2}px top`,
+    scrub: 1,
+  },
+});
+gsap.set(".img-eco-place", {
+  y: "-50%",
+});
+gsap.to(".img-eco-place", {
+  y: "50%",
+  ease: "linear",
+  scrollTrigger: {
+    trigger: ".test-div",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
+const gridAreaProduct = document.querySelectorAll(".top-content-grid-area");
+const bottomContentGrid = document.querySelector(".bottom-content-grid-area");
+let toggleArk = false;
+console.log(toggleArk);
+
+gridAreaProduct.forEach((item) => {
+  const accordian = item.nextElementSibling;
+  const momElement = item.parentElement;
+  momElement.addEventListener("mouseenter", () => {
+    console.log(accordian.style.maxHeight);
+    if (accordian.style.maxHeight == "") {
+      momElement.style.backgroundColor = "#f5f5f5";
+    } else {
+      return;
+    }
+    gsap.to(".cursor", {
+      scale: 2,
+    });
+    gsap.to(".learn-more", {
+      scale: 1,
+    });
+  });
+  momElement.addEventListener("mouseleave", () => {
+    if (accordian.style.maxHeight == "") {
+      momElement.style.backgroundColor = "transparent";
+    } else {
+      return;
+    }
+    gsap.to(".cursor", {
+      scale: 1,
+    });
+    gsap.to(".learn-more", {
+      scale: 0,
+    });
+  });
+  item.addEventListener("click", () => {
+    if (accordian.style.maxHeight == "") {
+      momElement.style.backgroundColor = "#f5f5f5";
+      accordian.style.maxHeight = bottomContentGrid.scrollHeight + "px";
+    } else {
+      accordian.style.maxHeight = null;
+      momElement.style.backgroundColor = "transparent";
+    }
+  });
+});
+
+const ecoHelp = document.querySelector(".test-div");
+ecoHelp.addEventListener("mouseenter", () => {
+  gsap.to(".cursor", {
+    scale: 2,
+  });
+  gsap.to(".learn-more", {
+    scale: 1,
+  });
+});
+ecoHelp.addEventListener("mouseleave", () => {
+  gsap.to(".cursor", {
+    scale: 1,
+  });
+  gsap.to(".learn-more", {
+    scale: 0,
+  });
+});
+// test
+
+const myObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+const elements = document.querySelectorAll(".hidden");
+elements.forEach((el) => myObserver.observe(el));
+
+// footer
+
+gsap.set(".footer", {
+  y: "-50%",
+});
+gsap.to(".footer", {
+  y: "0%",
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".footer",
     start: "top bottom",
     end: "bottom bottom",
     scrub: 1,
