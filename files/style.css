@@ -62,6 +62,9 @@
     url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.svg#SuisseIntl-Regular")
       format("svg");
 }
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
 * {
   margin: 0;
   padding: 0;
@@ -119,6 +122,9 @@ main {
 .learn-more svg {
   position: absolute;
   top: 0%;
+}
+.svg-learn-more-2 {
+  top: 100%;
 }
 body {
   background: #000000;
@@ -573,42 +579,11 @@ body {
     blur(10px);
   opacity: 0;
 }
-
-.valuepage {
-  width: 100%;
-  height: 300vh;
-}
 .gallery-wrapper {
   position: sticky;
   top: 0;
   width: 100%;
   height: 100vh;
-}
-
-.image-gallery {
-  padding: 30px 30px;
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
-  scale: 3.3;
-  overflow: hidden;
-  div {
-    overflow: hidden;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%) brightness(0.5);
-  }
 }
 
 .valuepage2 {
@@ -671,20 +646,6 @@ body {
   bottom: 0;
   left: 0;
   z-index: 4;
-}
-.value-bottom-conteiner {
-  width: 100%;
-  height: 300vh;
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10%;
-    background: linear-gradient(to top, #000000, transparent);
-    z-index: 1;
-  }
 }
 .value-top-bottom-conteiner {
   width: 100%;
@@ -1133,6 +1094,15 @@ body {
   display: inline-block;
   border-radius: 0.5vw;
 }
+.line-top-carousel {
+  width: 100%;
+  height: 1px;
+  background-color: #161616;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
 /* Fundadores */
 .text-abt-4 {
   padding: 4vw 2vw;
@@ -1205,16 +1175,17 @@ body {
   text-transform: uppercase;
   padding: 0 2vw;
 }
+/* Contato */
+
 .contact {
   width: 100%;
   background: #0e0e0e;
 }
 .contact-content {
+  overflow: hidden;
   width: 100%;
   height: 100vh;
-  background-color: #000000;
   position: relative;
-  background-image: url("./assets/img/desert.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1225,25 +1196,37 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 20%;
-  background: linear-gradient(to bottom, #0e0e0e, transparent);
-  z-index: 1;
-}
-.contact-content::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;
+  height: 100%;
   background: linear-gradient(to top, #000000, transparent);
   z-index: 1;
 }
-
+.contact-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contact2 {
+  left: 50%;
+  bottom: auto;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 40vw;
+  text-wrap: nowrap;
+  font-family: "GrifinitoL", sans-serif;
+  mix-blend-mode: difference;
+  font-weight: 500;
+  line-height: 0.7;
+  width: max-content;
+}
 /* Footer */
+.footer-conteiner {
+  width: 100%;
+  height: 83vh;
+  background-color: #000000;
+}
 footer {
   position: relative;
-  z-index: 1;
   width: 100%;
   height: 83vh;
   overflow: hidden;
@@ -1274,7 +1257,7 @@ footer {
 }
 .mini-contact {
   color: #fff;
-
+  font-size: 0.9vw;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1288,6 +1271,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0.5vw;
+  font-size: 0.9vw;
 }
 form {
   border-bottom: 1px solid #fff;
@@ -1316,18 +1300,21 @@ input::placeholder {
 input:focus {
   outline: none;
 }
-.bottom-content-footer p {
+.text-footer-end {
   color: #fff;
   font-family: "aeonik", sans-serif;
-
   font-size: 26vw;
   position: absolute;
-  bottom: 0;
+  bottom: 0vw;
   left: 50%;
   transform: translateX(-50%);
-  line-height: 1;
+  line-height: 0.9;
+  text-align: center;
   pointer-events: none;
+  display: flex;
+  overflow: hidden;
 }
+
 .part-right-footer {
   display: flex;
   justify-content: end;
@@ -1348,6 +1335,7 @@ input:focus {
   width: 100%;
   height: 50%;
   display: flex;
+  font-size: 0.9vw;
 }
 .bottom-left-part-right-footer {
   align-items: end;
@@ -1374,6 +1362,7 @@ input:focus {
   width: max-content;
   transition: 1s all;
   color: #fff;
+  font-size: 0.9vw;
 }
 .right-part-right-footer a::after,
 .left-part-right-footer a::after {
@@ -1398,6 +1387,10 @@ input:focus {
     background-color: #fff;
   }
 }
+.charFooter {
+  display: inline-block;
+  vertical-align: middle;
+}
 /* Responsividade */
 @media screen and (max-width: 600px) {
   .value-bottom-right {
@@ -1409,9 +1402,6 @@ input:focus {
     text-align: end;
     width: 100%;
   }
-  .value-bottom-conteiner {
-    padding: 3rem 3rem;
-  }
   .value-bottom-left p {
     font-size: 14px;
   }
@@ -1421,9 +1411,6 @@ input:focus {
   .adjust-left-2 {
     display: flex;
     justify-content: end;
-  }
-  .value-top-conteiner {
-    padding: 3rem 3rem;
   }
   .gallery-wrapper {
     overflow: hidden;
@@ -1468,9 +1455,6 @@ input:focus {
       font-size: 20vw;
     }
   }
-  .image-gallery {
-    scale: 4;
-  }
   .value-top-bottom-img img {
     scale: 2;
   }
@@ -1481,9 +1465,6 @@ input:focus {
     font-size: 4.5vw;
     position: absolute;
     padding: 3rem 3rem;
-  }
-  .value-bottom-conteiner {
-    padding: 0;
   }
   .bottom-img-text {
     font-size: 40vw;

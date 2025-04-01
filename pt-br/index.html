@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,12 +10,42 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <link
       rel="shortcut icon"
-      href="../files/assets/img/logo1.png"
+      href="/files/assets/img/logo1.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="../files/style.css" />
+    <link rel="stylesheet" href="/files/style.css" />
   </head>
   <body>
+    <div class="cursor"></div>
+    <div class="learn-more">
+      <div>Saiba Mais</div>
+      <div>
+        <svg
+          class="svg-learn-more-2"
+          width="24px"
+          height="24px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M14 15.6569V10M14 10H8.34315M14 10L5.63604 18.364M10.2432 20.8278C13.0904 21.3917 16.1575 20.5704 18.364 18.364C21.8787 14.8492 21.8787 9.15076 18.364 5.63604C14.8492 2.12132 9.15076 2.12132 5.63604 5.63604C3.42957 7.84251 2.60828 10.9096 3.17216 13.7568"
+              stroke="#ffffff"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+      </div>
+    </div>
     <div class="loading-conteiner">
       <div class="left-part-loading"></div>
       <div class="right-part-loading"></div>
@@ -141,7 +171,7 @@
     <div class="fixed-min-logo name-w" translate="no">A</div>
     <div class="menu">
       <div class="part-left-menu">
-        <a href="" class="a-menu">
+        <a href="" class="a-menu inicio-menu">
           <svg
             width="64px"
             height="64px"
@@ -162,9 +192,9 @@
               ></path>
             </g>
           </svg>
-          <p class="text-menu-part" translate="no">home</p>
+          <p class="text-menu-part" translate="no">início</p>
         </a>
-        <a href="" class="a-menu">
+        <a href="" class="a-menu contato-menu">
           <svg
             width="64px"
             height="64px"
@@ -187,7 +217,7 @@
           </svg>
           <p class="text-menu-part">contato</p>
         </a>
-        <a href="" class="a-menu">
+        <a href="" class="a-menu sobre-menu">
           <svg
             width="64px"
             height="64px"
@@ -210,7 +240,7 @@
           </svg>
           <p class="text-menu-part">sobre</p>
         </a>
-        <a href="" class="a-menu">
+        <a href="" class="a-menu projetos-menu">
           <svg
             width="64px"
             height="64px"
@@ -231,9 +261,9 @@
               ></path>
             </g>
           </svg>
-          <p class="text-menu-part">projeto</p>
+          <p class="text-menu-part">projetos</p>
         </a>
-        <a href="" class="a-menu">
+        <a href="" class="a-menu servicos-menu">
           <svg
             width="64px"
             height="64px"
@@ -254,19 +284,19 @@
               ></path>
             </g>
           </svg>
-          <p class="text-menu-part">produto</p>
+          <p class="text-menu-part">Serviços</p>
         </a>
         <div class="change-language">
           <div class="padding-change-language">
-            <a href="./pt-br/index.html" onclick="changeLanguage(event)">
-              <p>Select Language EN</p>
+            <a href="/pt-br/index.html" onclick="changeLanguage(event)">
+              <p>Selecionar Idioma EN</p>
             </a>
           </div>
         </div>
       </div>
       <div class="part-right-menu">
         <video
-          src="../files/assets/video/projectsWhiteVideo.mp4"
+          src="/files/assets/video/projectsWhiteVideo.mp4"
           autoplay
           loop
           muted
@@ -277,95 +307,609 @@
       <div class="left-part-loading-menu"></div>
       <div class="right-part-loading-menu"></div>
     </div>
-    <main class="main">
-      <section class="homepage">
-        <video
-          class="background-video"
-          src="../files/assets/video/0_Abstract_Texture_3840x2160.mp4"
-          autoplay
-          loop
-          muted
-        ></video>
-        <p class="p-homepage">
-          O novo começo para uma vida sustentável<br />
-          a baixo custo, conheça o novo.
-        </p>
-        <div class="content-logo">
-          <div class="line-logo logo-1"></div>
-          <div class="line-logo logo-2"></div>
-          <div class="line-logo logo-3"></div>
-          <div class="line-logo logo-4"></div>
-          <div class="line-logo logo-5"></div>
-        </div>
-      </section>
-      <section class="slider" translate="no">
-        <div class="slider-content">
+    <div>
+      <main class="main">
+        <section class="homepage">
           <video
-            src="../files/assets/video/0_Abstract_Geometric_3840x2160.mp4"
+            class="background-video"
+            src="/files/assets/video/backgroundvideo.mp4"
             autoplay
             loop
             muted
-            class="video-slider"
           ></video>
-          <p class="text-slider-1 text-i">
-            O <span class="migra">começo</span> de uma nova
-            <span class="ogg">era</span>
+          <p class="p-homepage">
+            O novo começo para uma vida sustentável<br />
+            a baixo custo, conheça o novo.
           </p>
-          <p class="text-slider-2 text-i">
-            começa <span class="ogg">agora</span>, bem-vindo
-            <span class="migra">ao</span>
-          </p>
-          <p class="text-slider-3 text-i">
-            <span class="migra logo-empresa">NewArch</span>
-          </p>
-        </div>
-      </section>
-      <section class="valuepage2">
-        <div class="carousel-text">
-          <div class="carousel-text-content">
-            <p>sustentável</p>
-            <p>automação</p>
-            <p>tecnologia</p>
-            <p>sustentável</p>
-            <p>automação</p>
-            <p>tecnologia</p>
+          <div class="content-logo">
+            <div class="line-logo logo-1"></div>
+            <div class="line-logo logo-2"></div>
+            <div class="line-logo logo-3"></div>
+            <div class="line-logo logo-4"></div>
+            <div class="line-logo logo-5"></div>
           </div>
-          <div class="carousel-text-content">
-            <p>sustentável</p>
-            <p>automação</p>
-            <p>tecnologia</p>
-            <p>sustentável</p>
-            <p>automação</p>
-            <p>tecnologia</p>
+        </section>
+        <section class="slider" translate="no">
+          <div class="slider-content">
+            <video
+              src="/files/assets/video/projectsWhiteVideo.mp4"
+              autoplay
+              loop
+              muted
+              class="video-slider"
+            ></video>
+            <p class="text-slider-1 text-i">
+              o <span class="migra">início</span>
+              de uma nova era
+              <span class="ogg">era</span>
+            </p>
+            <p class="text-slider-2 text-i">
+              começa <span class="ogg">agora</span>, bem-vindo ao
+            </p>
+            <p class="text-slider-3 text-i">
+              <span class="migra logo-empresa">NewArch</span>
+            </p>
           </div>
-          <div class="line-carousel-bottom"></div>
-        </div>
-        <div class="value-bottom-conteiner">
-          <p class="value-top-bottom-text-top">
-            sustentabilidade é o começo do novo
-          </p>
-          <div class="value-top-bottom-conteiner">
-            <div class="value-top-bottom-img">
-              <div class="bottom-img-text" translate="no">
-                <p class="left-position">o grande</p>
-                <p class="right-position">futuro</p>
-                <p class="left-position">está aqui</p>
+        </section>
+        <section class="valuepage2">
+          <div class="carousel-text">
+            <div class="carousel-text-content">
+              <p>sustainable</p>
+              <p>automation</p>
+
+              <p>technology</p>
+
+              <p>sustainable</p>
+
+              <p>automation</p>
+
+              <p>technology</p>
+            </div>
+            <div class="carousel-text-content">
+              <p>sustainable</p>
+
+              <p>automation</p>
+
+              <p>technology</p>
+
+              <p>sustainable</p>
+
+              <p>automation</p>
+
+              <p>technology</p>
+            </div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+        </section>
+        <section class="product-section">
+          <div class="projects-eco-place">
+            <div class="grid-white-rows">
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+            </div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+          <div class="eco-project">
+            <p class="text-eco-place">ecoplace</p>
+            <div class="text-eco-place-2">
+              <p class="text-1-eco-place">
+                Pensado para<br />
+                ajudar você
+              </p>
+              <p class="text-2-eco-place">
+                Criando um ambiente<br />
+                sustentável
+              </p>
+            </div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+          <div class="test-div">
+            <img
+              class="img-eco-place"
+              src="/files/assets/img/vestrahorn.jpg"
+              alt=""
+            />
+            <div class="mission"><p>ecohelp.</p></div>
+            <div class="lean-more-mission">
+              <div>saiba mais</div>
+              <div>
+                <svg
+                  fill="#000000"
+                  width="24px"
+                  height="24px"
+                  viewBox="0 0 24 20"
+                  id="right-arrow"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon line"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      id="primary"
+                      d="M3,12H21m-3,3,3-3L18,9"
+                      style="
+                        fill: none;
+                        stroke: #fff;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 1.5;
+                      "
+                    ></path>
+                  </g>
+                </svg>
               </div>
-              <img
-                class="value-img-config"
-                src="../files/assets/img/valuepage/mountains-green-3840x2160-12793.jpg"
-                alt=""
-              />
+            </div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+          <div class="grid-area-product hidden">
+            <button class="top-content-grid-area">
+              <div class="video-conteiner-grid">
+                <p translate="no">Ark.</p>
+                <video
+                  src="/files/assets/video/projectsWhiteVideo.mp4"
+                  autoplay
+                  loop
+                  muted
+                  class="video-product"
+                ></video>
+              </div>
+            </button>
+            <div class="bottom-content-grid-area">
+              <p>
+                Desenvolvido pela <span class="migra">NewArch</span>, o Ark é um
+                sistema de automação residencial que coloca você no comando
+                total da sua casa. Com tecnologia intuitiva e design discreto,
+                ele permite gerenciar desde a iluminação até o fornecimento de
+                energia para cada dispositivo conectado
+              </p>
+              <div class="line-carousel-bottom"></div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="productpage">
-        <div class="part-right-product-page"></div>
-        <div class="part-left-product-page"></div>
-      </section>
-    </main>
-
-    <script src="../script.js"></script>
+          <div class="grid-area-product hidden">
+            <button class="top-content-grid-area">
+              <div class="video-conteiner-grid t-c-g-a-2">
+                <p translate="no">Eox.</p>
+                <video
+                  src="/files/assets/video/projectBlackVideo.mp4"
+                  autoplay
+                  loop
+                  muted
+                  class="video-product"
+                ></video>
+              </div>
+            </button>
+            <div class="bottom-content-grid-area text-b-c-g-a-2">
+              <p class="">
+                Um sistema <span class="migra">inteligente</span> que monitora
+                em tempo real temperatura, umidade, CO₂ e qualidade do ar,
+                transformando dados <span class="migra">ambientais</span> em
+                insights acionáveis. Combinando sensores de alta precisão com um
+                dashboard interativo
+              </p>
+            </div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+          <div class="text-product-final">
+            Unimos tecnologia avançada e design intuitivo para democratizar o
+            monitoramento<br />
+            ambiental – com precisão científica e simplicidade para todos.
+            <div class="line-carousel-bottom"></div>
+          </div>
+          <div class="projects-eco-place">
+            <div class="grid-white-rows">
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+            </div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+          <div class="final-project">
+            Carpe diem.
+            <div class="grid-white-rows">
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+            </div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+        </section>
+        <section class="aboutpage">
+          <div class="about-page-changeC">
+            <div class="conteiner-abt-page-chanceC">
+              <div class="content-abt-changeC">
+                <div class="part-top-c-abt-changeC">
+                  <div class="grid-white-rows">
+                    <div class="white-row"></div>
+                    <div class="white-row"></div>
+                    <div class="white-row"></div>
+                    <div class="white-row"></div>
+                    <div class="white-row"></div>
+                  </div>
+                  <p translate="no">sobre.</p>
+                </div>
+                <div class="part-bottom-c-abt-changeC">
+                  <div class="grid-column-white"></div>
+                  <div class="grid-white-rows">
+                    <div class="white-row"></div>
+                    <div class="white-row"></div>
+                    <div class="white-row"></div>
+                    <div class="white-row"></div>
+                    <div class="white-row"></div>
+                  </div>
+                  <p class="text-abt-changeC">
+                    A NewArch combina inovação e funcionalidade, desenvolvendo
+                    produtos que integram<br />
+                    hardware e software para um monitoramento ambiental preciso.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="aboutpage2">
+            <div class="grid-white-rows">
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+            </div>
+            <div class="div2">
+              <img
+                src="/files/assets/img/canyon.jpg"
+                class="img-abt-2-item-2"
+                alt=""
+              />
+              <p class="text-abt-2-1">História</p>
+              <p class="text-abt-2">
+                Fundada no vibrante Rio de Janeiro em 2025, a NewArch une<br />
+                a energia criativa carioca com tecnologia de ponta.
+              </p>
+            </div>
+          </div>
+          <div class="text-abt-3">
+            <div class="grid-white-rows">
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+            </div>
+            <p>
+              O diferencial da NewArch está na fusão entre hardware<br />
+              de alta performance e software elegante.
+            </p>
+          </div>
+          <div>
+            <div class="text-abt-4">
+              <div class="grid-white-rows">
+                <div class="white-row"></div>
+                <div class="white-row"></div>
+                <div class="white-row"></div>
+                <div class="white-row"></div>
+                <div class="white-row"></div>
+              </div>
+              <p>Quem são os fundadores?</p>
+            </div>
+            <div class="founders">
+              <div class="grid-white-rows">
+                <div class="white-row"></div>
+                <div class="white-row"></div>
+                <div class="white-row"></div>
+                <div class="white-row"></div>
+                <div class="white-row"></div>
+              </div>
+              <div class="founders-conteiner">
+                <div class="grid-column-white"></div>
+                <div class="img-fnders-name">
+                  <div>
+                    <p>Clara Pires<br />Curtinhas</p>
+                  </div>
+                  <div>
+                    <img src="/files/assets/img/Clara.jpeg" alt="" />
+                  </div>
+                </div>
+                <div class="text-about-founders">
+                  <p>
+                    Estrategista digital especializada em campanhas que
+                    convertem. Transformo dados em narrativas envolventes para
+                    cada plataforma, unindo análise precisa e criatividade.
+                    Minha paixão? Criar conexões reais entre marcas e públicos
+                    globais – porque engajamento verdadeiro começa com uma
+                    história que ressoa.
+                  </p>
+                </div>
+                <div class="profission-contry">
+                  <div>Estrategista digital</div>
+                  <div>Rio de Janeiro,<br />Brasil</div>
+                </div>
+              </div>
+              <div class="founders-conteiner">
+                <div class="grid-column-white"></div>
+                <div class="img-fnders-name">
+                  <div>
+                    <p>Gabriela<br />Alves</p>
+                  </div>
+                  <div>
+                    <img
+                      src="/files/assets/img/IMG-20241130-WA0002.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="text-about-founders">
+                  <p>
+                    Especializada em otimizar processos empresariais através de
+                    documentação estratégica e sistemas administrativos
+                    inteligentes. Minha expertise conecta iniciativas de
+                    marketing com gestão financeira, contratos e compliance -
+                    transformando burocracia em eficiência. Enquanto muitos veem
+                    apenas papelada, eu vejo oportunidades para eliminar atritos
+                    operacionais e impulsionar a produtividade organizacional.
+                  </p>
+                </div>
+                <div class="profission-contry">
+                  <div>
+                    Gerente<br />
+                    Administrativa
+                  </div>
+                  <div>Rio de Janeiro,<br />Brasil</div>
+                </div>
+              </div>
+              <div class="founders-conteiner">
+                <div class="grid-column-white"></div>
+                <div class="img-fnders-name">
+                  <div>
+                    <p>Maria Clara<br />Torres</p>
+                  </div>
+                  <div>
+                    <img src="/files/assets/img/file.png" alt="" />
+                  </div>
+                </div>
+                <div class="text-about-founders">
+                  <p>
+                    Sou uma desenvolvedora full-stack e Arduino de 17 anos.
+                    Minha paixão é aprender novas formas de usar minha
+                    criatividade de maneira prática e eficiente, e estou sempre
+                    aberto a novas experiências e oportunidades de aprendizado.
+                  </p>
+                </div>
+                <div class="profission-contry">
+                  <div>
+                    Desenvolvedora<br />
+                    de Arduino UI
+                  </div>
+                  <div>Rio de Janeiro,<br />Brasil</div>
+                </div>
+              </div>
+              <div class="founders-conteiner">
+                <div class="grid-column-white"></div>
+                <div class="img-fnders-name">
+                  <div>
+                    <p>Maria<br />Elizabeth</p>
+                  </div>
+                  <div>
+                    <img src="/files/assets/img/liza.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="text-about-founders">
+                  <p>
+                    Desenvolvedora full-stack especializada em criar soluções
+                    integradas, do front-end ao back-end, com foco em
+                    usabilidade e desempenho. Minha abordagem combina código
+                    limpo com design intuitivo, garantindo que os projetos
+                    atendam tanto às necessidades técnicas quanto humanas.
+                    Acredito que a boa tecnologia resolve problemas reais de
+                    forma simples e eficaz.
+                  </p>
+                </div>
+                <div class="profission-contry">
+                  <div>Desenvolvedora<br />full-stack</div>
+                  <div>Rio de Janeiro,<br />Brasil</div>
+                </div>
+              </div>
+              <div class="founders-conteiner">
+                <div class="grid-column-white"></div>
+                <div class="img-fnders-name">
+                  <div>
+                    <p>Leonardo<br />Leal</p>
+                  </div>
+                  <div>
+                    <img src="/files/assets/img/Leonardo.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="text-about-founders">
+                  <p>
+                    Sou desenvolvedor front-end especializado em React, Next.js
+                    e animações com GSAP. Construo interfaces responsivas e de
+                    alta performance usando tecnologias modernas como Tailwind
+                    CSS e TypeScript. Minha paixão? Criar experiências de
+                    usuário fluidas através de código limpo e design intuitivo –
+                    em constante evolução para aprimorar minha arte digital.
+                  </p>
+                </div>
+                <div class="profission-contry">
+                  <div>Desenvolverdor <br />web UX UI</div>
+                  <div>Rio de Janeiro,<br />Brasil</div>
+                </div>
+                <div class="line-carousel-bottom"></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-image-about">
+            <div class="grid-white-rows">
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+            </div>
+            <div class="carousel-image-content">
+              <img src="/files/assets/img/tress.jpg" alt="" />
+              <img src="/files/assets/img/beach2.jpg" alt="" />
+              <img src="/files/assets/img/desert.jpg" alt="" />
+              <img src="/files/assets/img/canyon.jpg" alt="" />
+              <img src="/files/assets/img/vestrahorn.jpg" alt="" />
+            </div>
+            <div class="carousel-image-content">
+              <img src="/files/assets/img/tress.jpg" alt="" />
+              <img src="/files/assets/img/beach2.jpg " alt="" />
+              <img src="/files/assets/img/desert.jpg" alt="" />
+              <img src="/files/assets/img/canyon.jpg" alt="" />
+              <img src="/files/assets/img/vestrahorn.jpg" alt="" />
+            </div>
+          </div>
+        </section>
+        <section class="contact">
+          <div class="projects-eco-place">
+            <div class="line-top-carousel"></div>
+            <div class="grid-white-rows">
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+              <div class="white-row"></div>
+            </div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+          <div class="contact-content">
+            <img class="contact-image" src="/files/assets/img/RJ.jpg" alt="" />
+            <div class="lean-more-mission">
+              <div>saiba mais</div>
+              <div>
+                <svg
+                  fill="#000000"
+                  width="24px"
+                  height="24px"
+                  viewBox="0 0 24 20"
+                  id="right-arrow"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon line"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      id="primary"
+                      d="M3,12H21m-3,3,3-3L18,9"
+                      style="
+                        fill: none;
+                        stroke: #fff;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 1.5;
+                      "
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="mission contact2 hidden"><p>contato.</p></div>
+            <div class="line-carousel-bottom"></div>
+          </div>
+        </section>
+      </main>
+      <div class="footer-conteiner">
+        <footer class="footer">
+          <div class="top-content-footer">
+            <div class="part-left-footer">
+              <p class="text-footer">Inovação contínua, impacto elevado</p>
+              <div class="mini-contact">
+                <p>Entre em contato:</p>
+                <p>newarch.nwa@gmail.com</p>
+              </div>
+              <div class="form">
+                <p>Digite seu email para começar o novo.</p>
+                <form action="">
+                  <input type="text" placeholder="Email" />
+                  <button class="button-footer">
+                    <svg
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M4 12H20M20 12L14 6M20 12L14 18"
+                          stroke="#333"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </g>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="part-right-footer">
+              <div class="content-part-right-footer">
+                <div class="left-part-right-footer">
+                  <div class="top-left-part-right-footer">
+                    <a href="">Início</a>
+                    <a href="">Projetos</a>
+                    <a href="">Sobre</a>
+                    <a href="">Serviços</a>
+                    <a href="">Contato</a>
+                  </div>
+                  <div class="bottom-left-part-right-footer">
+                    <p>Rio de Janeiro — Brasil</p>
+                  </div>
+                </div>
+                <div class="right-part-right-footer">
+                  <div class="top-left-part-right-footer">
+                    <a
+                      href="https://www.instagram.com/newarch.global/"
+                      target="_blank"
+                      >Instagram</a
+                    >
+                    <a
+                      href="https://www.youtube.com/@NEWARCH-GLOBAL"
+                      target="_blank"
+                      >Youtube</a
+                    >
+                    <a
+                      href="https://www.tiktok.com/@newarch.nwa?_t=ZM-8vBFAAhmVhl&_r=1"
+                      target="_blank"
+                      >TikTok</a
+                    >
+                  </div>
+                  <div class="bottom-left-part-right-footer">
+                    <p>Termos de uso<br />@13—25</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-content-footer">
+            <div class="text-footer-end">newarch</div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="/script.js"></script>
   </body>
 </html>
