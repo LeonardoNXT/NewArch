@@ -583,6 +583,18 @@ gsap.to(".charFooter", {
 
 //menu-configurante
 
+const startMenu = document.querySelector(".inicio-menu");
+const contactMenu = document.querySelector(".contato-menu");
+const aboutMenu = document.querySelector(".sobre-menu");
+const projectMenu = document.querySelector(".projetos-menu");
+
+const item = document.querySelector(".homepage");
+const item2 = document.querySelector(".contact-content");
+const item3 = document.querySelector(".aboutpage");
+const item4 = document.querySelector(".eco-project");
+const menuContent = [startMenu, contactMenu, aboutMenu, projectMenu];
+const optionMenuContent = [item, item2, item3, item4];
+
 function customEasing(t) {
   return 1 - Math.pow(1 - t, 5); // Easing "easeOutQuint" - super suave
 }
@@ -605,44 +617,33 @@ const resumeComandMenu = (elementAttribute) => {
     height: "0vh",
     ease: "power2.out",
     onComplete: () => {
-      lenis.start();
+      unlockScroll();
       lenis.scrollTo(elementAttribute, {
-        duration: 10, // duração em segundos
+        duration: 2,
         easing: customEasing,
       });
     },
   });
 };
-
-const startMenu = document.querySelector(".inicio-menu");
-const contactMenu = document.querySelector(".contato-menu");
-const aboutMenu = document.querySelector(".sobre-menu");
-const projectMenu = document.querySelector(".projetos-menu");
-
-startMenu.addEventListener("click", (event) => {
-  togglemenu = !togglemenu;
-  event.preventDefault();
-  const item = document.querySelector(".homepage");
-  resumeComandMenu(item);
+const closeArrow = (arrow) => {
+  gsap.to(arrow, {
+    x: "-64px",
+  });
+};
+menuContent.forEach((item, index) => {
+  item.addEventListener("click", (event) => {
+    const arrowMenu = item.children[0];
+    console.log(arrowMenu);
+    togglemenu = !togglemenu;
+    event.preventDefault();
+    resumeComandMenu(optionMenuContent[index]);
+    closeArrow(arrowMenu);
+  });
 });
 
-contactMenu.addEventListener("click", (event) => {
-  togglemenu = !togglemenu;
-  event.preventDefault();
-  const item = document.querySelector(".contact-content");
-  resumeComandMenu(item);
-});
-
-aboutMenu.addEventListener("click", (event) => {
-  togglemenu = !togglemenu;
-  event.preventDefault();
-  const item = document.querySelector(".aboutpage");
-  resumeComandMenu(item);
-});
-
-projectMenu.addEventListener("click", (event) => {
-  togglemenu = !togglemenu;
-  event.preventDefault();
-  const item = document.querySelector(".eco-project");
-  resumeComandMenu(item);
-});
+// footer
+const homefooter = document.querySelector(".home-footer");
+const projectsfooter = document.querySelector(".projects-footer");
+const aboutfooter = document.querySelector(".about-footer");
+const servicesfooter = document.querySelector(".services-footer");
+const contactfooter = document.querySelector(".contact-footer");
