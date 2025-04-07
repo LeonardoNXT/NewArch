@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@font-face {
+  font-family: "Migra";
+  src: url("/assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2"),
+    url("/assets/font/MigraItalic-ExtralightItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ogg";
+  src: url("/files/assets/font/Ogg-LightItalic-BF646c18fc49421.otf")
+      format("otf"),
+    url("/files/assets/font/Ogg-LightItalic-BF646c18fc3aa5c.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Canopee";
+  src: url("/files/assets/font/canopee-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url("/files/assets/font/Aeonik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Helvetica";
+  src: url("/files/assets/font/HelveticaNeueThin.otf") format("opentype");
+}
+@font-face {
+  font-family: "SuisseIntlThin";
+  src: url("/files/assets/font/SuisseIntl-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GrifinitoL";
+  src: url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.eot");
+  src: url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.svg#GrifinitoL")
+      format("svg");
+}
+@font-face {
+  font-family: "SuisseIntl-Regular";
+  src: url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot");
+  src: url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.svg#SuisseIntl-Regular")
+      format("svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+/* Mouse */
+
+.cursor {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  position: fixed;
+  top: 0;
+  left: -0.3%;
+  z-index: 3;
+  pointer-events: none;
+  background-color: #ffffff;
+}
+
+/*GoodBye Page*/
+
+.goodbye-page {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.text-end-goodbye {
+  color: #fff;
+  font-family: "aeonik";
+  font-size: 5vw;
+}
+
+/*Reveal page */
+
+.reveal-Page {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 5vw;
+  font-family: "aeonik";
+  pointer-events: none;
+}
+.firsh-text {
+  position: absolute;
+}
+
+/* main content */
+
+.submitPage {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1vw;
+}
+video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(10%);
+}
+.name-email-inputed {
+  color: #535353;
+  font-family: "Aeonik";
+  display: flex;
+  width: 40%;
+  gap: 1vw;
+}
+button p {
+  mix-blend-mode: difference;
+}
+.email,
+.number,
+button {
+  padding: 1vw 1vw;
+  background-color: #0a0a0a;
+  font-size: 1vw;
+  border: 1px solid #33333336;
+  border-radius: 1vw;
+  text-overflow: ellipsis;
+}
+button:disabled {
+  background-color: #0a0a0a;
+}
+button {
+  background-color: #e7e7e7;
+  color: #b4b4b4;
+  transition: 0.3s all;
+}
+.email {
+  width: 50%;
+}
+
+.number {
+  width: 50%;
+}
+.input-content {
+  width: 100%;
+  position: relative;
+}
+input {
+  width: 100%;
+  padding: 1vw;
+  font-size: 1vw;
+  background-color: #0a0a0a;
+  border: none;
+  border: 1px solid #33333336;
+  color: #fff;
+}
+.limit-char-subject {
+  position: absolute;
+  top: 50%;
+  right: 1vw;
+  color: rgb(207, 207, 207);
+  transform: translateY(-50%);
+  transition: 0.3s all;
+}
+form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  font-family: "Aeonik";
+  color: #000000;
+}
+input,
+textarea {
+  border-radius: 1vw;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #b4b4b4;
+}
+.textarea-div {
+  width: 100%;
+  position: relative;
+}
+.limit-char-textarea {
+  position: absolute;
+  bottom: 1vw;
+  right: 1vw;
+  z-index: 2;
+  color: rgb(207, 207, 207);
+  transition: 0.3s all;
+}
+textarea {
+  width: 100%;
+  color: #fff;
+  font-size: 1vw;
+  height: 40vh;
+  padding: 1vw;
+  font-family: "Aeonik";
+  background-color: #0a0a0a;
+  border: 1px solid #33333336;
+  resize: none;
+}
+.no-enabled {
+  color: rgb(68, 26, 26);
+  transition: 0.3s all;
+}
+.low-text {
+  color: #3d3d3d;
+  text-transform: uppercase;
+  font-family: "Aeonik";
+  position: absolute;
+  bottom: 2vw;
+  left: 2vw;
+}

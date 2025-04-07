@@ -1,0 +1,552 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@font-face {
+  font-family: "Migra"; /* Nome personalizado */
+  src: url("/assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2"),
+    url("/assets/font/MigraItalic-ExtralightItalic.ttf") format("truetype");
+  font-weight: normal; /* Peso da fonte (opcional) */
+  font-style: italic; /* Estilo (normal ou itálico) */
+}
+@font-face {
+  font-family: "Ogg";
+  src: url("/files/assets/font/Ogg-LightItalic-BF646c18fc49421.otf")
+      format("otf"),
+    url("/files/assets/font/Ogg-LightItalic-BF646c18fc3aa5c.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Canopee";
+  src: url("/files/assets/font/canopee-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url("/files/assets/font/Aeonik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Helvetica";
+  src: url("/files/assets/font/HelveticaNeueThin.otf") format("opentype");
+}
+@font-face {
+  font-family: "SuisseIntlThin";
+  src: url("/files/assets/font/SuisseIntl-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GrifinitoL";
+  src: url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.eot");
+  src: url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.svg#GrifinitoL")
+      format("svg");
+}
+@font-face {
+  font-family: "SuisseIntl-Regular";
+  src: url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot");
+  src: url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.svg#SuisseIntl-Regular")
+      format("svg");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+  transition: 1s all;
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: 2s all;
+}
+.learn-more {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 2%;
+  align-items: center;
+  color: #fff;
+  font-family: "aeonik", sans-serif;
+  font-size: 1vw;
+  text-align: center;
+  z-index: 9999;
+  gap: 5px;
+  transition: scale 0.3s;
+  scale: 0;
+  mix-blend-mode: difference;
+}
+.learn-more svg {
+  position: absolute;
+  top: 0%;
+}
+.svg-learn-more-2 {
+  top: 100%;
+}
+.cursor {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  position: fixed;
+  top: 0;
+  left: -0.3%;
+  z-index: 10000;
+  pointer-events: none;
+  background-color: #ffffff;
+}
+/* Welcome-page */
+
+.welcome-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 10001;
+  color: #fff;
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-size: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+/* Goodbye-page */
+.goodbye-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 10001;
+  color: #fff;
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-size: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+/* header */
+header {
+  width: 100%;
+  padding: 2vw 2vw;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 9000;
+  top: 0;
+  mix-blend-mode: difference;
+}
+header p {
+  color: white;
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-size: 1vw;
+  mix-blend-mode: difference;
+}
+nav {
+  display: flex;
+  gap: 0.5vw;
+}
+nav a {
+  text-decoration: none;
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-size: 0.75vw;
+  position: relative;
+  color: #fff;
+}
+.link-nav::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease; /* Adicionando transição */
+}
+
+.link-nav:hover {
+  &::before {
+    width: 100%;
+  }
+}
+.active {
+  color: #a8a8a8;
+}
+/* homepage */
+.homepage {
+  width: 100%;
+  height: 80vh;
+  background-color: #000000;
+  position: relative;
+}
+.homepage p {
+  color: #fff;
+  font-family: "SuisseIntlThin", sans-serif;
+  font-size: 2vw;
+  position: absolute;
+  bottom: 2vw;
+  left: 2vw;
+}
+
+/* infomation */
+
+.infomation {
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  padding: 2vw 2vw;
+}
+.geiintouch {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "SuisseIntlThin";
+  font-size: 1vw;
+  padding: 2vw 0;
+  padding-bottom: 5vw;
+  position: relative;
+}
+.geiintouch::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  background-color: #333;
+}
+
+/* form */
+.form-section {
+  font-family: "aeonik";
+  width: 100%;
+  padding: 2vw 2vw;
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+}
+.formpage {
+  width: 100%;
+  display: flex;
+  gap: 2vw;
+  position: relative;
+  align-items: center;
+}
+
+.input-form {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  width: 100%;
+  font-size: 0.9vw;
+  color: #dddddd;
+  padding: 1vw 0;
+}
+.input-form::placeholder {
+  color: #dddddd;
+}
+.nm-email-phone {
+  display: flex;
+  justify-content: space-between;
+  gap: 4vw;
+  width: 100%;
+}
+.input-form:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.continue {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1vw;
+  align-items: center;
+  gap: 0.4vw;
+  position: relative;
+  width: fit-content;
+  transition: 0.3s all;
+}
+.continue:disabled {
+  color: #333;
+  transition: 0.3s all;
+  svg {
+    stroke: #333;
+  }
+}
+.continue div {
+  display: flex;
+  align-items: center;
+}
+/* services */
+.services {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+  z-index: 2;
+}
+.services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgb(8, 8, 8);
+  background: linear-gradient(
+    180deg,
+    rgb(0, 0, 0) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+}
+.services::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgb(8, 8, 8);
+  background: linear-gradient(
+    0deg,
+    rgb(0, 0, 0) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+}
+.services img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(50%);
+}
+.services P {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  mix-blend-mode: difference;
+  font-size: 25vw;
+  color: #fff;
+  font-family: "Canopee", sans-serif;
+}
+.bottom-line-services {
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+}
+/* footer */
+.footer-conteiner {
+  width: 100%;
+  height: 83vh;
+  background-color: #000000;
+}
+footer {
+  position: relative;
+  width: 100%;
+  height: 83vh;
+  overflow: hidden;
+}
+
+.top-content-footer {
+  width: 100%;
+  height: 45%;
+  position: relative;
+  display: flex;
+  padding: 2.4vw 2.2vw;
+}
+.bottom-content-footer {
+  width: 100%;
+  height: 55%;
+  position: relative;
+}
+.part-left-footer,
+.part-right-footer {
+  color: #fff;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  font-family: "SuisseIntlThin", sans-serif;
+}
+.text-footer {
+  font-size: 2vw;
+}
+.mini-contact {
+  color: #fff;
+  font-size: 0.9vw;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form {
+  position: absolute;
+  max-width: 500px;
+  width: 100%;
+  width: 100;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  font-size: 0.9vw;
+}
+.form-footer {
+  border-bottom: 1px solid #fff;
+
+  position: relative;
+}
+.button-footer {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: 0;
+}
+.input-footer {
+  background-color: transparent;
+  border: 0;
+  padding: 0.5vw 0vw;
+  color: #fff;
+  width: 100%;
+  font-size: 0.9vw;
+}
+.input-footer::placeholder {
+  color: rgb(118, 118, 118);
+}
+.input-footer:focus {
+  outline: none;
+}
+.text-footer-end {
+  color: #fff;
+  font-family: "aeonik", sans-serif;
+  font-size: 26vw;
+  position: absolute;
+  bottom: 0vw;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 0.9;
+  text-align: center;
+  pointer-events: none;
+  display: flex;
+  overflow: hidden;
+}
+
+.part-right-footer {
+  display: flex;
+  justify-content: end;
+}
+.content-part-right-footer {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  justify-content: space-between;
+  position: relative;
+}
+.top-left-part-right-footer {
+  gap: 0.8vh;
+  flex-direction: column;
+}
+.top-left-part-right-footer,
+.bottom-left-part-right-footer {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  font-size: 0.9vw;
+}
+.bottom-left-part-right-footer {
+  align-items: end;
+}
+.location-terms {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.right-part-right-footer {
+  position: relative;
+}
+.left-part-right-footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.left-part-right-footer a,
+.right-part-right-footer a {
+  position: relative;
+  text-decoration: none;
+  width: max-content;
+  transition: 1s all;
+  color: #fff;
+  font-size: 0.9vw;
+}
+.right-part-right-footer a::after,
+.left-part-right-footer a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Inicia com largura 0 */
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease; /* Animação apenas da largura */
+}
+.right-part-right-footer a:hover,
+.left-part-right-footer a:hover {
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+  }
+}
+.charFooter {
+  display: inline-block;
+  vertical-align: middle;
+}
