@@ -1,11 +1,5 @@
 let lenis; // Declara a variável globalmente
 
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    location.reload();
-  }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   lenis = new Lenis({
     lerp: 0.05,
@@ -485,6 +479,10 @@ contactSection.addEventListener("click", () => {
     opacity: 1,
     onComplete: () => {
       window.location.href = "/pages/contact/";
+      gsap.to(".hidden-page", {
+        opacity: 0,
+        delay: 1,
+      });
     },
   });
 });
@@ -860,10 +858,3 @@ const projectsfooter = document.querySelector(".projects-footer");
 const aboutfooter = document.querySelector(".about-footer");
 const servicesfooter = document.querySelector(".services-footer");
 const contactfooter = document.querySelector(".contact-footer");
-
-history.pushState({ requireReload: true }, "");
-
-// No evento popstate, verifique se precisa recarregar
-window.addEventListener("popstate", (event) => {
-  console.log("funcionou");
-});
