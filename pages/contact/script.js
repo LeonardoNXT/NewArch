@@ -261,3 +261,5 @@ buttonForm.addEventListener("click", (e) => {
     },
   });
 });
+
+window.addEventListener("popstate", () => location.reload());

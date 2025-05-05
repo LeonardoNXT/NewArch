@@ -188,14 +188,14 @@ body {
   padding: 0 10rem;
 }
 .carousel-init {
-  width: 100%; /* Ocupa 100% da largura disponível */
-  height: 100vh; /* Ocupa 100% da altura da tela */
+  width: 100%;
+  height: 100vh;
   color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  overflow: hidden; /* Impede a rolagem */
+  overflow: hidden;
   color: #fff;
   mix-blend-mode: difference;
   z-index: 9999;
@@ -204,16 +204,16 @@ body {
 .top-carousel,
 .center-carousel,
 .bottom-carousel {
-  height: 33.3%; /* Divide a altura em 3 partes iguais */
+  height: 33.3%;
   display: flex;
-  justify-content: center; /* Alinha o conteúdo à esquerda */
-  align-items: center; /* Centraliza verticalmente */
-  font-size: 20vw; /* Tamanho da fonte responsivo */
+  justify-content: center;
+  align-items: center;
+  font-size: 20vw;
   font-family: "Canopee";
-  letter-spacing: 2vw; /* Espaçamento entre letras responsivo */
+  letter-spacing: 2vw;
   font-weight: lighter;
 
-  white-space: nowrap; /* Impede a quebra de linha */
+  white-space: nowrap;
   position: relative;
   top: 20px;
 }
@@ -224,9 +224,9 @@ body {
   justify-content: center;
 }
 .homepage {
-  position: relative; /* Adicione isso */
-  height: 100vh; /* Garante que o contêiner ocupe a tela inteira */
-  overflow: hidden; /* Evita barras de rolagem indesejadas */
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .background-video {
@@ -1548,6 +1548,26 @@ input:focus {
   .menu-toggle {
     width: 10vw;
   }
+  .imovible-menu {
+    display: none;
+  }
+  .menu-grid-area {
+    width: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .menu-grid p {
+    font-size: 2.2vw;
+  }
+  .menu-grid-area a {
+    font-size: 12vw;
+    top: 50%;
+    transform: rotate(0deg) translateX(0%) translatey(-50%);
+  }
+  .line-right-grid-menu {
+    width: 100%;
+    height: 1px;
+  }
   .part-left-menu {
     display: flex;
     width: 100%;
@@ -1584,19 +1604,18 @@ input:focus {
     font-size: 40vw;
   }
   .change-language {
-    bottom: 20vw;
-    right: auto;
-    left: 4vw;
+    bottom: 3vw;
+    right: 2vw;
     font-size: 4.5vw;
     text-wrap: nowrap;
-    padding: 4vw 4vw;
+    padding: 2vw 2vw;
     border-radius: 5vw 5vw;
-    background-color: #000000;
+    background-color: #ffffff;
     border: 1px solid #ffffff18;
   }
   .padding-change-language img {
-    width: 15vw;
-    border-radius: 3vw 3vw;
+    width: 10vw;
+    border-radius: 1vw 1vw;
   }
   .part-top-c-abt-changeC p {
     font-size: 30vw;
@@ -1640,7 +1659,7 @@ input:focus {
     display: none;
   }
   .test-div {
-    background-image: url(/files/assets/img/vestrahorn.jpg);
+    background-image: url(/files/assets/img/vestrahorn.png);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -1671,6 +1690,7 @@ input:focus {
   .aboutpage2 {
     padding: 4vw 4vw;
   }
+
   .mission {
     left: 50%;
     top: 50%;
@@ -1688,6 +1708,7 @@ input:focus {
   .img-fnders-name img {
     width: 40%;
   }
+
   .founders-conteiner {
     grid-template-columns: auto;
     grid-template-rows: auto auto 1fr;

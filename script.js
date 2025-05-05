@@ -388,7 +388,6 @@ gridAreaProduct.forEach((item) => {
   const accordian = item.nextElementSibling;
   const momElement = item.parentElement;
   momElement.addEventListener("mouseenter", () => {
-    console.log(accordian.style.maxHeight);
     if (accordian.style.maxHeight == "") {
       momElement.style.backgroundColor = "#f5f5f5";
     } else {
@@ -564,6 +563,8 @@ const item2 = document.querySelector(".contact-content");
 const item3 = document.querySelector(".aboutpage");
 const item4 = document.querySelector(".eco-project");
 
+const menuGridArea = document.querySelector(".menu-grid-area");
+
 function closeMenuGlobal() {
   gsap.to(spansOfMenu, {
     y: "100%",
@@ -623,7 +624,6 @@ const optionMenuGrid = [
     link: "",
   },
 ];
-const menuGridArea = document.querySelector(".menu-grid-area");
 function customEasing(t) {
   return 1 - Math.pow(1 - t, 5); // Easing "easeOutQuint" - super suave
 }
@@ -659,7 +659,6 @@ function createMenuGrid(item) {
       resumeComandMenu(item.item);
       togglemenu = !togglemenu;
     });
-  } else {
   }
   if (
     window.location.pathname == "/" ||
@@ -680,10 +679,10 @@ optionMenuGrid.forEach((item) => {
   createMenuGrid(item);
 });
 const menuGrid = optionMenuGrid.filter((item) => "item" in item);
-menuGrid.forEach((item) => {
-  item.item.addEventListener("click", () => {
-    resumeComandMenu(item.item);
-    console.log(item.item);
+const childrenMenu = [...menuGridArea.children];
+childrenMenu?.forEach((selection, i) => {
+  selection.addEventListener("click", () => {
+    resumeComandMenu(optionMenuGrid[i].item);
   });
 });
 
@@ -770,7 +769,7 @@ gsap.set(".menu", {
 function menuopen() {
   gsap.to(".menu", {
     duration: 1.5,
-    height: "100vh",
+    height: "100dvh",
     filter: "blur(0px)",
     ease: "power3.out",
     onstart: () => {
@@ -841,6 +840,7 @@ function menuclose() {
     Element.removeEventListener("mouseleave", handleMouseLeave);
   });
 }
+
 const aboutButtom = menuGridArea.children[2];
 function addLinetop() {
   const line = document.createElement("div");
@@ -854,3 +854,5 @@ const projectsfooter = document.querySelector(".projects-footer");
 const aboutfooter = document.querySelector(".about-footer");
 const servicesfooter = document.querySelector(".services-footer");
 const contactfooter = document.querySelector(".contact-footer");
+
+window.addEventListener("popstate", () => location.reload());
