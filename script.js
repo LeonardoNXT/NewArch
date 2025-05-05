@@ -1,5 +1,11 @@
 let lenis; // Declara a variável globalmente
 
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    location.reload();
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   lenis = new Lenis({
     lerp: 0.05,
@@ -855,4 +861,9 @@ const aboutfooter = document.querySelector(".about-footer");
 const servicesfooter = document.querySelector(".services-footer");
 const contactfooter = document.querySelector(".contact-footer");
 
-window.addEventListener("popstate", () => location.reload());
+history.pushState({ requireReload: true }, "");
+
+// No evento popstate, verifique se precisa recarregar
+window.addEventListener("popstate", (event) => {
+  console.log("funcionou");
+});
