@@ -36,11 +36,10 @@ gsap.from(".center-carousel", 2, {
   x: "-100%",
   ease: "power4.inOut",
 });
-gsap.from(word2, {
+gsap.set(word2, {
+  willChange: "transform, opacity",
   opacity: 0,
-  transform: "translateY(100%)",
-  stagger: 0.04,
-  ease: "power4.inOut",
+  y: 100,
 });
 gsap.from(word3, {
   opacity: 0,
@@ -54,11 +53,16 @@ gsap.from(word4, {
   stagger: 0.04,
   ease: "power3.inOut",
 });
-gsap.to(word2, 1, {
+gsap.to(word2, {
   opacity: 1,
-  transform: "translateY(0)",
+  y: 0,
+  duration: 1,
   stagger: 0.04,
   ease: "power4.inOut",
+  // 5. Limpe will-change após a animação
+  onComplete: () => {
+    gsap.set(word2, { willChange: "auto" });
+  },
 });
 gsap.to(word3, 1, {
   opacity: 1,

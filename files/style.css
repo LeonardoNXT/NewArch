@@ -146,6 +146,7 @@ main {
 .word3,
 .word4 {
   opacity: 0;
+  will-change: contents;
 }
 .svg-learn-more-2 {
   top: 100%;
