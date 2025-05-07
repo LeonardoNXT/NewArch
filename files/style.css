@@ -178,6 +178,7 @@ header svg {
 }
 .left-part-loading,
 .right-part-loading {
+  will-change: transform;
   width: 50%;
   height: 100vh;
   background: #000000fd;

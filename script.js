@@ -94,12 +94,12 @@ gsap.to(namelogo, {
   },
 });
 gsap.to(".left-part-loading", 2, {
-  left: "-50%",
+  x: "-100%",
   ease: "power3.inOut",
   delay: 3,
 });
 gsap.to(".right-part-loading", 2, {
-  right: "-50%",
+  x: "100%",
   ease: "power3.inOut",
   delay: 3,
 });
