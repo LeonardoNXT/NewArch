@@ -260,8 +260,8 @@ gsap.to(".text-slider-3", {
   },
 });
 const linksFlag = [
-  "https://www.gov.br/agricultura/pt-br/assuntos/relacoes-internacionais/agro-mais-investimentos/imagens/bandeira-dos-estados-unidos.png/@@images/image.png",
-  "https://www.gov.br/agricultura/pt-br/assuntos/relacoes-internacionais/agro-mais-investimentos/imagens/bandeira-do-brasil.png/@@images/image.png",
+  "/files/assets/img/EUA.webp",
+  "/files/assets/img/image.webp",
 ];
 const imgLanguage = document.querySelector(".img-language");
 

@@ -1676,7 +1676,7 @@ input:focus {
     display: none;
   }
   .test-div {
-    background-image: url(/files/assets/img/vestrahorn.png);
+    background-image: url(/files/assets/img/vestrahorn.webp);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
