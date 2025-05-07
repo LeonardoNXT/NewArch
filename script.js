@@ -656,7 +656,8 @@ function createMenuGrid(item) {
   div.classList.add("menu-grid");
   const div2 = document.createElement("div");
   div2.classList.add("line-right-grid-menu");
-  const link = document.createElement("a");
+  const link = document.createElement("div");
+  link.classList.add("menu-grid-button-config");
   const p = document.createElement("p");
   if (item.item) {
     div.addEventListener("click", () => {
@@ -690,7 +691,7 @@ childrenMenu?.forEach((selection, i) => {
   });
 });
 
-const menuGridALL = document.querySelectorAll(".menu-grid a");
+const menuGridALL = document.querySelectorAll(".menu-grid-button-config");
 menuGridALL.forEach((a) => {
   const textContentGrid = a.textContent;
   const refactorText = textContentGrid.split("");

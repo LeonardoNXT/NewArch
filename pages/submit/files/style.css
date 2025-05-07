@@ -6,6 +6,7 @@
     url("/assets/font/MigraItalic-ExtralightItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: "Ogg";
@@ -15,26 +16,31 @@
       format("truetype");
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: "Canopee";
   src: url("/files/assets/font/canopee-regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Aeonik";
   src: url("/files/assets/font/Aeonik-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Neue Helvetica";
   src: url("/files/assets/font/HelveticaNeueThin.otf") format("opentype");
+  font-display: swap;
 }
 @font-face {
   font-family: "SuisseIntlThin";
   src: url("/files/assets/font/SuisseIntl-Light.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "GrifinitoL";
@@ -49,6 +55,7 @@
       format("truetype"),
     url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.svg#GrifinitoL")
       format("svg");
+  font-display: swap;
 }
 @font-face {
   font-family: "SuisseIntl-Regular";
@@ -63,6 +70,8 @@
       format("truetype"),
     url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.svg#SuisseIntl-Regular")
       format("svg");
+
+  font-display: swap;
 }
 
 * {

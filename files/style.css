@@ -430,7 +430,7 @@ body {
   position: absolute;
   bottom: 2vw;
 }
-.menu-grid a {
+.menu-grid-button-config {
   position: absolute;
   text-decoration: none;
   color: #fff;
@@ -1559,7 +1559,7 @@ input:focus {
   .menu-grid p {
     font-size: 2.2vw;
   }
-  .menu-grid-area a {
+  .menu-grid-button-config {
     font-size: 12vw;
     top: 50%;
     transform: rotate(0deg) translateX(0%) translatey(-50%);
