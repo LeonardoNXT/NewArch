@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("no-scroll");
 });
 gsap.registerPlugin(ScrollTrigger);
+
+// PARTE INICIAL, TELA DE INICIO NEWARCH
+
 const word2 = document.querySelectorAll(".word2");
 const word3 = document.querySelectorAll(".word3");
 const word4 = document.querySelectorAll(".word4");
@@ -33,21 +36,39 @@ gsap.from(".center-carousel", 2, {
   x: "-100%",
   ease: "power4.inOut",
 });
-gsap.from(word2, 1, {
+gsap.from(word2, {
   opacity: 0,
   transform: "translateY(100%)",
   stagger: 0.04,
   ease: "power4.inOut",
 });
-gsap.from(word3, 1, {
+gsap.from(word3, {
   opacity: 0,
   transform: "translateY(100%)",
   stagger: 0.04,
   ease: "power3.inOut",
 });
-gsap.from(word4, 1, {
+gsap.from(word4, {
   opacity: 0,
-  transform: "translateY(100%)",
+  transform: "translateY(0)",
+  stagger: 0.04,
+  ease: "power3.inOut",
+});
+gsap.to(word2, 1, {
+  opacity: 1,
+  transform: "translateY(0)",
+  stagger: 0.04,
+  ease: "power4.inOut",
+});
+gsap.to(word3, 1, {
+  opacity: 1,
+  transform: "translateY(0)",
+  stagger: 0.04,
+  ease: "power3.inOut",
+});
+gsap.to(word4, 1, {
+  opacity: 1,
+  transform: "translateY(0)",
   stagger: 0.04,
   ease: "power3.inOut",
 });
@@ -111,8 +132,8 @@ gsap.to(word5, 2, {
     scrub: true,
   },
 });
-gsap.from(".menu-toggle", 1, {
-  opacity: 0,
+gsap.to(".menu-toggle", 1, {
+  opacity: 1,
   delay: 6.5,
 });
 const videosALLArray = document.querySelectorAll(".video");
