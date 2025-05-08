@@ -40,6 +40,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
 gsap.registerPlugin(ScrollTrigger);
 
+// mouse-config
+const mouse = {
+  mouseX: 0,
+  mouseY: 0,
+};
+let previewX = 0;
+let previewY = 0;
+window.addEventListener("mousemove", (e) => {
+  mouse.mouseX = e.clientX;
+  mouse.mouseY = e.clientY;
+});
+const tick = () => {
+  previewX += (mouse.mouseX - previewX) / 17;
+  previewY += (mouse.mouseY - previewY) / 17;
+  gsap.set(".cursor", {
+    x: previewX,
+    y: previewY,
+  });
+  gsap.set(".learn-more", {
+    x: previewX,
+    y: previewY,
+  });
+  requestAnimationFrame(tick);
+};
+tick();
+
 // PARTE INICIAL, TELA DE INICIO NEWARCH
 
 const word2 = document.querySelectorAll(".word2");
@@ -176,11 +202,11 @@ const Observer2 = new IntersectionObserver((entries) => {
 videosALLArray.forEach((video) => {
   Observer2.observe(video);
 });
+
 // Menu
 
 let selection = document.querySelector(".menu-toggle");
 let togglemenu = false;
-let arrowMenu = gsap.utils.toArray(".arrow-menu");
 function lockScroll() {
   lenis.stop(); // Pausa o Lenis
   document.body.classList.add("no-scroll");
@@ -286,6 +312,9 @@ gsap.to(".text-slider-3", {
     scrub: 1,
   },
 });
+
+// Configuracao do botao que muda idioma
+
 const linksFlag = [
   "/files/assets/img/EUA.webp",
   "/files/assets/img/image.webp",
@@ -323,7 +352,6 @@ function changeLanguage(event) {
     backgroundColor: "#000",
     delay: 2,
     ease: "power3.inOut",
-
     onComplete: () => {
       if (
         window.location.pathname === "/index.html" ||
@@ -335,70 +363,13 @@ function changeLanguage(event) {
       }
     },
   });
-
   console.log("Idioma alterado!");
 }
-
-gsap.set(".img-abt-2-item-1, .img-abt-2-item-2", {
-  scale: 1.5,
-  yPercent: -10,
+document.querySelector(".change-language").addEventListener("click", (e) => {
+  changeLanguage(e);
 });
 
-gsap.to(".img-abt-2-item-1, .img-abt-2-item-2", {
-  yPercent: 10,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".aboutpage2",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: 1,
-  },
-});
-
-// mouse-config
-const mouse = {
-  mouseX: 0,
-  mouseY: 0,
-};
-let previewX = 0;
-let previewY = 0;
-window.addEventListener("mousemove", (e) => {
-  mouse.mouseX = e.clientX;
-  mouse.mouseY = e.clientY;
-});
-const tick = () => {
-  previewX += (mouse.mouseX - previewX) / 17;
-  previewY += (mouse.mouseY - previewY) / 17;
-  gsap.set(".cursor", {
-    x: previewX,
-    y: previewY,
-  });
-  gsap.set(".learn-more", {
-    x: previewX,
-    y: previewY,
-  });
-  requestAnimationFrame(tick);
-};
-tick();
-
-const historySection = document.querySelector(".img-abt-2-item-2");
-historySection.addEventListener("mouseenter", () => {
-  gsap.to(".cursor", {
-    scale: 2,
-  });
-  gsap.to(".learn-more", {
-    scale: 1,
-  });
-});
-
-historySection.addEventListener("mouseleave", () => {
-  gsap.to(".cursor", {
-    scale: 1,
-  });
-  gsap.to(".learn-more", {
-    scale: 0,
-  });
-});
+// FIM DA CONFIGURACAO DO BOTAO QUE TROCA IDIOMA
 
 // ProductPage
 let heighttela = window.innerHeight;
@@ -488,7 +459,6 @@ ecoHelp.addEventListener("mouseleave", () => {
     scale: 0,
   });
 });
-// test
 
 const myObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -502,8 +472,54 @@ const myObserver = new IntersectionObserver((entries) => {
 
 const elements = document.querySelectorAll(".hidden");
 elements.forEach((el) => myObserver.observe(el));
-const contact = document.querySelector(".contact-content");
+
+// FIM DO PRODUCTPAGE
+
+// FOTO DO HISTORY COM EFEITO PARALAX
+
+gsap.set(".img-abt-2-item-1, .img-abt-2-item-2", {
+  scale: 1.5,
+  yPercent: -10,
+});
+
+gsap.to(".img-abt-2-item-1, .img-abt-2-item-2", {
+  yPercent: 10,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".aboutpage2",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
+
+// FIM DA FOTO COM EFEITO PARALAX
+
+// EFEITO HOVER AO PASSAR NA FOTO DO EFEITO PALARAX QUE OCORRE SOMENTE EM COMPUTADORES
+
+const historySection = document.querySelector(".img-abt-2-item-2");
+historySection.addEventListener("mouseenter", () => {
+  gsap.to(".cursor", {
+    scale: 2,
+  });
+  gsap.to(".learn-more", {
+    scale: 1,
+  });
+});
+
+historySection.addEventListener("mouseleave", () => {
+  gsap.to(".cursor", {
+    scale: 1,
+  });
+  gsap.to(".learn-more", {
+    scale: 0,
+  });
+});
+
+// FIM DO EFEITO
+
 // Contact
+const contact = document.querySelector(".contact-content");
 gsap.set(".contact-image", {
   y: "-50%",
   scale: 1.2,
@@ -519,7 +535,6 @@ gsap.to(".contact-image", {
     scrub: 1,
   },
 });
-// Contact
 const contactSection = document.querySelector(".contact-content");
 contactSection.addEventListener("click", () => {
   gsap.to(".hidden-page", 1, {
