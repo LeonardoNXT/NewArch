@@ -1,4 +1,24 @@
+import { initFooterAnimation } from "./files/components/footer.js";
 let lenis; // Declara a variável globalmente
+
+// MOBILE PRESET
+
+const DEFAULT_MOBILE_SCREEN = 600;
+
+function mobilePRESET() {
+  const canyonH = document.querySelector(".div2 img");
+  const vestra = document.querySelector(".img-eco-place");
+  const rjContact = document.querySelector(".contact-image");
+  if (window.innerWidth < DEFAULT_MOBILE_SCREEN) {
+    canyonH.src = "/files/assets/img/CanyonMobile.webp";
+    vestra.src = "/files/assets/img/vestrahormMobile.webp";
+    rjContact.src = "/files/assets/img/RioMobile.webp";
+  } else {
+    canyonH.src = "/files/assets/img/canyon.webp";
+    vestra.src = "/files/assets/img/vestrahorn.webp";
+    rjContact.src = "/files/assets/img/RioOptimized.webp";
+  }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   lenis = new Lenis({
@@ -14,7 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   lenis.stop();
   document.body.classList.add("no-scroll");
+  initFooterAnimation();
+  mobilePRESET();
 });
+
 gsap.registerPlugin(ScrollTrigger);
 
 // PARTE INICIAL, TELA DE INICIO NEWARCH
@@ -407,7 +430,6 @@ gsap.to(".img-eco-place", {
 });
 const gridAreaProduct = document.querySelectorAll(".top-content-grid-area");
 const bottomContentGrid = document.querySelector(".bottom-content-grid-area");
-let toggleArk = false;
 
 gridAreaProduct.forEach((item) => {
   const accordian = item.nextElementSibling;
@@ -529,63 +551,8 @@ contact.addEventListener("mouseleave", () => {
     scale: 0,
   });
 });
-gsap.set(".footer", {
-  y: "-50%",
-});
-gsap.to(".footer", {
-  y: "0%",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".footer",
-    start: "top bottom",
-    end: "bottom bottom",
-    scrub: 1,
-  },
-});
-const newArchEndText = document.querySelector(".text-footer-end");
-const textContentNWA = newArchEndText.textContent;
-const splitTextNWA = textContentNWA.split("");
-newArchEndText.innerHTML = "";
-splitTextNWA.forEach((char) => {
-  const divNewArchText = document.createElement("div");
-  divNewArchText.classList.add("charFooter");
-  divNewArchText.textContent = char;
-  newArchEndText.appendChild(divNewArchText);
-});
-const body = document.querySelector("body");
-
-gsap.set(".charFooter", {
-  y: "-100%",
-});
-gsap.set(".text-footer-end", {
-  y: "-10%",
-});
-gsap.to(".text-footer-end", {
-  y: "0%",
-  duration: 0.5,
-  scrollTrigger: {
-    trigger: ".footer",
-    start: "bottom bottom",
-  },
-});
-const heightPercent = document.querySelector(".footer-conteiner").clientHeight;
-gsap.to(".charFooter", {
-  y: "0%",
-  duration: 2,
-  ease: "power4.out",
-  stagger: 0.09,
-  scrollTrigger: {
-    trigger: ".footer-conteiner",
-    start: `${heightPercent - 100}px bottom`,
-    end: "bottom bottom",
-  },
-});
 
 //menu-configurante
-const startMenu = document.querySelector(".inicio-menu");
-const contactMenu = document.querySelector(".contato-menu");
-const aboutMenu = document.querySelector(".sobre-menu");
-const projectMenu = document.querySelector(".projetos-menu");
 
 const item = document.querySelector(".homepage");
 const item2 = document.querySelector(".contact-content");
@@ -708,7 +675,7 @@ function createMenuGrid(item) {
 optionMenuGrid.forEach((item) => {
   createMenuGrid(item);
 });
-const menuGrid = optionMenuGrid.filter((item) => "item" in item);
+
 const childrenMenu = [...menuGridArea.children];
 childrenMenu?.forEach((selection, i) => {
   selection.addEventListener("click", () => {

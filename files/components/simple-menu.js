@@ -6,7 +6,6 @@ export function simpleMenu() {
   let toogleMenu = false;
   buttomToogle.addEventListener("click", () => {
     toogleMenu = !toogleMenu;
-    console.log(toogleMenu);
     menuActive();
   });
   function menuActive() {
