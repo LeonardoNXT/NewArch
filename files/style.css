@@ -1,8 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 @font-face {
   font-family: "Migra"; /* Nome personalizado */
   src: url("./assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2"),
     url("./assets/font/MigraItalic-ExtralightItalic.ttf") format("truetype");
+  font-weight: normal; /* Peso da fonte (opcional) */
+  font-style: italic; /* Estilo (normal ou itálico) */
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins"; /* Nome personalizado */
+  src: url("./assets/font/Poppins-Regular.ttf") format("truetype");
   font-weight: normal; /* Peso da fonte (opcional) */
   font-style: italic; /* Estilo (normal ou itálico) */
   font-display: swap;
