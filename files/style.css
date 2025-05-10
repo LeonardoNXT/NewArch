@@ -1577,6 +1577,7 @@ input:focus {
   .fixed-min-logo {
     font-size: 20vw;
     bottom: 0;
+    will-change: transform, opacity;
   }
   .text-value-top {
     font-size: 20vw;
