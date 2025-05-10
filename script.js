@@ -135,7 +135,6 @@ function animationInit() {
   gsap.from(word5, 1, {
     opacity: 0,
     ease: "power3.inOut",
-    delay: 6.5,
     stagger: 0.4,
     onComplete: () => {
       const carouselInit = document.querySelector(".carousel-init");
