@@ -1,73 +1,56 @@
 @font-face {
   font-family: "Migra"; /* Nome personalizado */
-  src: url("/assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2"),
-    url("/assets/font/MigraItalic-ExtralightItalic.ttf") format("truetype");
+  src: url("assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2");
   font-weight: normal; /* Peso da fonte (opcional) */
-  font-display: swap;
   font-style: italic; /* Estilo (normal ou itálico) */
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins"; /* Nome personalizado */
+  src: url("assets/font/Poppins-Regular.woff2") format("woff2");
+  font-weight: normal; /* Peso da fonte (opcional) */
+  font-style: italic; /* Estilo (normal ou itálico) */
+  font-display: swap;
 }
 @font-face {
   font-family: "Ogg";
-  src: url("/files/assets/font/Ogg-LightItalic-BF646c18fc49421.otf")
-      format("otf"),
-    url("/files/assets/font/Ogg-LightItalic-BF646c18fc3aa5c.ttf")
-      format("truetype");
+  src: url("assets/font/Ogg-LightItalic-BF646c18fc3aa5c.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Canopee";
-  src: url("/files/assets/font/canopee-regular.ttf") format("truetype");
+  src: url("assets/font/canopee-regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Aeonik";
-  src: url("/files/assets/font/Aeonik-Regular.ttf") format("truetype");
+  src: url("assets/font/Aeonik-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Neue Helvetica";
-  src: url("/files/assets/font/HelveticaNeueThin.otf") format("opentype");
+  src: url("assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "SuisseIntlThin";
-  src: url("/files/assets/font/SuisseIntl-Light.ttf") format("truetype");
+  src: url("assets/font/SuisseIntl-Light.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "GrifinitoL";
-  src: url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.eot");
-  src: url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.woff")
-      format("woff"),
-    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.ttf")
-      format("truetype"),
-    url("https://db.onlinewebfonts.com/t/1c87f20c55baa7eccc98b8603b5eecea.svg#GrifinitoL")
-      format("svg");
+  src: url("assets//font/GrifinitoL.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "SuisseIntl-Regular";
-  src: url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot");
-  src: url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff")
-      format("woff"),
-    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.ttf")
-      format("truetype"),
-    url("https://db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.svg#SuisseIntl-Regular")
-      format("svg");
+  src: url("assets/font/SuisseIntl-Regular.woff2") format("woff2");
   font-display: swap;
 }
 * {
