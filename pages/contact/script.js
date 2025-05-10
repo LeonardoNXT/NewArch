@@ -1,5 +1,6 @@
 import { initFooterAnimation } from "../../files/components/footer.js";
 import { simpleMenu } from "../../files/components/simple-menu.js";
+import { cursor } from "../../files/components/cursor.js";
 
 let lenis;
 
@@ -16,35 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   requestAnimationFrame(raf);
 
   lenis.stop();
+  cursor();
   initFooterAnimation();
   simpleMenu(lenis);
 });
-// mouse-config
-
-const mouse = {
-  mouseX: 0,
-  mouseY: 0,
-};
-let previewX = 0;
-let previewY = 0;
-window.addEventListener("mousemove", (e) => {
-  mouse.mouseX = e.clientX;
-  mouse.mouseY = e.clientY;
-});
-const tick = () => {
-  previewX += (mouse.mouseX - previewX) / 17;
-  previewY += (mouse.mouseY - previewY) / 17;
-  gsap.set(".cursor", {
-    x: previewX,
-    y: previewY,
-  });
-  gsap.set(".learn-more", {
-    x: previewX,
-    y: previewY,
-  });
-  requestAnimationFrame(tick);
-};
-tick();
 // Welcome-page config
 
 gsap.set(".text-welcome", {
@@ -209,7 +185,11 @@ buttonForm.addEventListener("click", (e) => {
     opacity: 1,
     duration: 0.3,
     onComplete: () => {
-      window.location.href = "/pages/submit";
+      if (window.location.pathname == "/pages/contact") {
+        window.location.href = "/pages/submit";
+      } else {
+        window.location.href = "/pages/submit/pt-br";
+      }
     },
   });
 });

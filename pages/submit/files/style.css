@@ -80,6 +80,9 @@
   box-sizing: border-box;
   cursor: none;
 }
+body {
+  background-color: #000;
+}
 
 /* Mouse */
 
@@ -119,7 +122,7 @@
 
 .reveal-Page {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   position: absolute;
   top: 0;
   left: 0;
@@ -141,7 +144,7 @@
 
 .submitPage {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -252,7 +255,7 @@ textarea {
   width: 100%;
   color: #fff;
   font-size: 1vw;
-  height: 40vh;
+  height: 40svh;
   padding: 1vw;
   font-family: "Aeonik";
   background-color: #0a0a0a;
@@ -270,4 +273,45 @@ textarea {
   position: absolute;
   bottom: 2vw;
   left: 2vw;
+}
+@media screen and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+  .name-email-inputed {
+    width: 90%;
+    overflow: hidden;
+  }
+  form {
+    width: 90%;
+  }
+  .email,
+  .number,
+  button {
+    font-size: 3.5vw;
+    padding: 0;
+    text-align: center;
+    padding: 4vw 0vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  input {
+    font-size: 3.5vw;
+    padding: 4vw 4vw;
+  }
+  .textarea {
+    font-size: 3.5vw;
+    padding: 4vw;
+  }
+  .limit-char-subject,
+  .limit-char-textarea {
+    right: 2vw;
+  }
+  .limit-char-textarea {
+    bottom: 3vw;
+  }
+  .low-text {
+    display: none;
+  }
 }

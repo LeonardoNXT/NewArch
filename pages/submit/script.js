@@ -1,5 +1,8 @@
 //Setando os valores guardados no localstorage
 
+import { cursor } from "../../files/components/cursor.js";
+cursor();
+
 const SavedProfile = JSON.parse(localStorage.getItem("personaData"));
 
 const currentEmail = document.querySelector(".email");
@@ -9,27 +12,6 @@ currentEmail.innerHTML = SavedProfile.email;
 currentPhone.innerHTML = SavedProfile.phone;
 
 // Animações
-const mouse = {
-  mouseX: 0,
-  mouseY: 0,
-};
-let previewX = 0;
-let previewY = 0;
-window.addEventListener("mousemove", (e) => {
-  mouse.mouseX = e.clientX;
-  mouse.mouseY = e.clientY;
-});
-const tick = () => {
-  previewX += (mouse.mouseX - previewX) / 17;
-  previewY += (mouse.mouseY - previewY) / 17;
-  gsap.set(".cursor", {
-    x: previewX,
-    y: previewY,
-  });
-  requestAnimationFrame(tick);
-};
-tick();
-
 const firshNameText = document.querySelector(".firsh-name");
 const firshName = SavedProfile.name.split(" ")[0];
 firshNameText.innerHTML = firshName;

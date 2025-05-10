@@ -129,6 +129,7 @@
               type="email"
               placeholder="Email"
               class="input-form email-value"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               required
             />
             <input
@@ -139,7 +140,7 @@
               data-phone="phone"
             />
           </div>
-          <button class="continue" disabled>
+          <button class="continue" type="submit" disabled>
             <div>
               <p>continue</p>
             </div>

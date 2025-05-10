@@ -1,26 +1,234 @@
 import { initFooterAnimation } from "./files/components/footer.js";
+import { cursor } from "./files/components/cursor.js";
 let lenis; // Declara a variável globalmente
+gsap.registerPlugin(ScrollTrigger);
 
 // MOBILE PRESET
 
-const DEFAULT_MOBILE_SCREEN = 600;
+const word2 = document.querySelectorAll(".word2");
+const word3 = document.querySelectorAll(".word3");
+const word4 = document.querySelectorAll(".word4");
+const namelogo = document.querySelectorAll(".name-logo");
 
+let clickOnScreen = false;
+let eventAttached = false;
+const DEFAULT_MOBILE_SCREEN = 768;
 function mobilePRESET() {
+  mobileIMGS();
+  mobileWidth();
+}
+
+function mobileIMGS() {
   const canyonH = document.querySelector(".div2 img");
   const vestra = document.querySelector(".img-eco-place");
   const rjContact = document.querySelector(".contact-image");
+
   if (window.innerWidth < DEFAULT_MOBILE_SCREEN) {
-    canyonH.src = "/files/assets/img/CanyonMobile.webp";
-    vestra.src = "/files/assets/img/vestrahormMobile.webp";
-    rjContact.src = "/files/assets/img/RioMobile.webp";
   } else {
     canyonH.src = "/files/assets/img/canyon.webp";
     vestra.src = "/files/assets/img/vestrahorn.webp";
     rjContact.src = "/files/assets/img/RioOptimized.webp";
   }
 }
+function mobileWidth() {
+  if (window.innerWidth < DEFAULT_MOBILE_SCREEN && !eventAttached) {
+    window.addEventListener("click", () => {
+      if (!clickOnScreen) {
+        setGsapValueMobile();
+        clickOnScreen = true;
+      }
+    });
+    eventAttached = true;
+  }
+}
+
+function animationInit() {
+  //responsável pela primeira animação após o click no mobile (modularização)
+  gsap.from(".top-carousel, .center-carousel, .bottom-carousel", 3, {
+    opacity: 0,
+    filter: "blur(5px)",
+    ease: "power3.inOut",
+  });
+  gsap.from(".top-carousel, .bottom-carousel", 2, {
+    x: "100%",
+    ease: "power2.inOut",
+  });
+  gsap.from(".center-carousel", 2, {
+    x: "-100%",
+    ease: "power4.inOut",
+  });
+  gsap.set(word2, {
+    willChange: "transform, opacity",
+    opacity: 0,
+    y: 100,
+  });
+  gsap.from(word3, {
+    opacity: 0,
+    transform: "translateY(100%)",
+    stagger: 0.04,
+    ease: "power3.inOut",
+  });
+  gsap.from(word4, {
+    opacity: 0,
+    transform: "translateY(0)",
+    stagger: 0.04,
+    ease: "power3.inOut",
+  });
+  gsap.to(word2, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: 0.04,
+    ease: "power4.inOut",
+    onComplete: () => {
+      gsap.set(word2, { willChange: "auto" });
+    },
+  });
+  gsap.to(word3, 1, {
+    opacity: 1,
+    transform: "translateY(0)",
+    stagger: 0.04,
+    ease: "power3.inOut",
+  });
+  gsap.to(word4, 1, {
+    opacity: 1,
+    transform: "translateY(0)",
+    stagger: 0.04,
+    ease: "power3.inOut",
+  });
+
+  const namelogoFiltered = Array.from(namelogo).filter(
+    (element) => !element.classList.contains("center")
+  );
+
+  gsap.to(namelogoFiltered, {
+    duration: 1,
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 2,
+  });
+  gsap.to(namelogo, {
+    duration: 1,
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 6,
+    onComplete: () => {
+      document.body.classList.remove("no-scroll");
+      lenis.start();
+    },
+  });
+  gsap.to(".left-part-loading", 2, {
+    x: "-100%",
+    ease: "power3.inOut",
+    delay: 3,
+  });
+  gsap.to(".right-part-loading", 2, {
+    x: "100%",
+    ease: "power3.inOut",
+    delay: 3,
+  });
+  gsap.from(".homepage", 2, {
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 3,
+  });
+  const word5 = document.querySelectorAll(".fixed-min-logo");
+  gsap.from(word5, 1, {
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 6.5,
+    stagger: 0.4,
+    onComplete: () => {
+      const carouselInit = document.querySelector(".carousel-init");
+      const loadingContent = document.querySelector(".loading-conteiner");
+      carouselInit.remove();
+      loadingContent.remove();
+    },
+  });
+  gsap.to(word5, 2, {
+    bottom: "110%",
+    filter: "blur(5px)",
+    ease: "power3.inOut",
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "top bottom",
+      scrub: true,
+    },
+  });
+  gsap.to(".menu-toggle", 1, {
+    opacity: 1,
+    delay: 6.5,
+  });
+}
+function animationSlider() {
+  gsap.set(".slider", {
+    height: window.innerHeight * 3,
+  });
+  gsap.from(".text-slider-1", {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "top top",
+      end: "12.5% top",
+      scrub: 1,
+    },
+  });
+  gsap.to(".text-slider-1", {
+    color: "transparent",
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "12.5% top",
+      end: "25% top",
+      scrub: 1,
+    },
+  });
+
+  gsap.to(".text-slider-2", {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "25% top",
+      end: "37.5% top",
+      scrub: 1,
+    },
+  });
+
+  gsap.to(".text-slider-2", {
+    color: "transparent",
+    delay: 0.5,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "37.5% top",
+      end: "50% top",
+      scrub: 1,
+    },
+  });
+  gsap.to(".text-slider-3", {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "50% top",
+      end: "75% top",
+      scrub: 1,
+    },
+  });
+  gsap.to(".init-mobile", 1, {
+    opacity: 0,
+  });
+}
+function setGsapValueMobile() {
+  // inicio da pagina
+  animationInit();
+  // slider
+  animationSlider();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+  const botao = document.getElementById("meuBotao");
+  if (botao) {
+    botao.click(); // Simula o clique
+  }
   lenis = new Lenis({
     lerp: 0.05,
     smoothWheel: true,
@@ -33,162 +241,138 @@ document.addEventListener("DOMContentLoaded", () => {
   requestAnimationFrame(raf);
 
   lenis.stop();
+  cursor();
   document.body.classList.add("no-scroll");
   initFooterAnimation();
   mobilePRESET();
 });
 
-gsap.registerPlugin(ScrollTrigger);
-
-// mouse-config
-const mouse = {
-  mouseX: 0,
-  mouseY: 0,
-};
-let previewX = 0;
-let previewY = 0;
-window.addEventListener("mousemove", (e) => {
-  mouse.mouseX = e.clientX;
-  mouse.mouseY = e.clientY;
-});
-const tick = () => {
-  previewX += (mouse.mouseX - previewX) / 17;
-  previewY += (mouse.mouseY - previewY) / 17;
-  gsap.set(".cursor", {
-    x: previewX,
-    y: previewY,
-  });
-  gsap.set(".learn-more", {
-    x: previewX,
-    y: previewY,
-  });
-  requestAnimationFrame(tick);
-};
-tick();
-
 // PARTE INICIAL, TELA DE INICIO NEWARCH
 
-const word2 = document.querySelectorAll(".word2");
-const word3 = document.querySelectorAll(".word3");
-const word4 = document.querySelectorAll(".word4");
-const namelogo = document.querySelectorAll(".name-logo");
-gsap.from(".top-carousel, .center-carousel, .bottom-carousel", 3, {
-  opacity: 0,
-  filter: "blur(5px)",
-  ease: "power3.inOut",
-});
-gsap.from(".top-carousel, .bottom-carousel", 2, {
-  x: "100%",
-  ease: "power2.inOut",
-});
-gsap.from(".center-carousel", 2, {
-  x: "-100%",
-  ease: "power4.inOut",
-});
-gsap.set(word2, {
-  willChange: "transform, opacity",
-  opacity: 0,
-  y: 100,
-});
-gsap.from(word3, {
-  opacity: 0,
-  transform: "translateY(100%)",
-  stagger: 0.04,
-  ease: "power3.inOut",
-});
-gsap.from(word4, {
-  opacity: 0,
-  transform: "translateY(0)",
-  stagger: 0.04,
-  ease: "power3.inOut",
-});
-gsap.to(word2, {
-  opacity: 1,
-  y: 0,
-  duration: 1,
-  stagger: 0.04,
-  ease: "power4.inOut",
-  // 5. Limpe will-change após a animação
-  onComplete: () => {
-    gsap.set(word2, { willChange: "auto" });
-  },
-});
-gsap.to(word3, 1, {
-  opacity: 1,
-  transform: "translateY(0)",
-  stagger: 0.04,
-  ease: "power3.inOut",
-});
-gsap.to(word4, 1, {
-  opacity: 1,
-  transform: "translateY(0)",
-  stagger: 0.04,
-  ease: "power3.inOut",
-});
+if (window.innerWidth > DEFAULT_MOBILE_SCREEN) {
+  gsap.from(".top-carousel, .center-carousel, .bottom-carousel", 3, {
+    opacity: 0,
+    filter: "blur(5px)",
+    ease: "power3.inOut",
+  });
+  gsap.from(".top-carousel, .bottom-carousel", 2, {
+    x: "100%",
+    ease: "power2.inOut",
+  });
+  gsap.from(".center-carousel", 2, {
+    x: "-100%",
+    ease: "power4.inOut",
+  });
+  gsap.set(word2, {
+    willChange: "transform, opacity",
+    opacity: 0,
+    y: 100,
+  });
+  gsap.from(word3, {
+    opacity: 0,
+    transform: "translateY(100%)",
+    stagger: 0.04,
+    ease: "power3.inOut",
+  });
+  gsap.from(word4, {
+    opacity: 0,
+    transform: "translateY(0)",
+    stagger: 0.04,
+    ease: "power3.inOut",
+  });
+  gsap.to(word2, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: 0.04,
+    ease: "power4.inOut",
+    onComplete: () => {
+      gsap.set(word2, { willChange: "auto" });
+    },
+  });
+  gsap.to(word3, 1, {
+    opacity: 1,
+    transform: "translateY(0)",
+    stagger: 0.04,
+    ease: "power3.inOut",
+  });
+  gsap.to(word4, 1, {
+    opacity: 1,
+    transform: "translateY(0)",
+    stagger: 0.04,
+    ease: "power3.inOut",
+  });
 
-const namelogoFiltered = Array.from(namelogo).filter(
-  (element) => !element.classList.contains("center")
-);
+  const namelogoFiltered = Array.from(namelogo).filter(
+    (element) => !element.classList.contains("center")
+  );
 
-gsap.to(namelogoFiltered, {
-  duration: 1,
-  opacity: 0,
-  ease: "power3.inOut",
-  delay: 2,
-});
-gsap.to(namelogo, {
-  duration: 1,
-  opacity: 0,
-  ease: "power3.inOut",
-  delay: 6,
-  onComplete: () => {
-    document.body.classList.remove("no-scroll");
-    lenis.start();
-  },
-});
-gsap.to(".left-part-loading", 2, {
-  x: "-100%",
-  ease: "power3.inOut",
-  delay: 3,
-});
-gsap.to(".right-part-loading", 2, {
-  x: "100%",
-  ease: "power3.inOut",
-  delay: 3,
-});
-gsap.from(".homepage", 2, {
-  opacity: 0,
-  ease: "power3.inOut",
-  delay: 3,
-});
-const word5 = document.querySelectorAll(".fixed-min-logo");
-gsap.from(word5, 1, {
-  opacity: 0,
-  ease: "power3.inOut",
-  delay: 6.5,
-  stagger: 0.4,
-  onComplete: () => {
-    const carouselInit = document.querySelector(".carousel-init");
-    const loadingContent = document.querySelector(".loading-conteiner");
-    carouselInit.remove();
-    loadingContent.remove();
-  },
-});
-gsap.to(word5, 2, {
-  bottom: "110%",
-  filter: "blur(5px)",
-  ease: "power3.inOut",
-  stagger: 0.2,
-  scrollTrigger: {
-    trigger: ".slider",
-    start: "top bottom",
-    scrub: true,
-  },
-});
-gsap.to(".menu-toggle", 1, {
-  opacity: 1,
-  delay: 6.5,
-});
+  gsap.to(namelogoFiltered, {
+    duration: 1,
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 2,
+  });
+  gsap.to(namelogo, {
+    duration: 1,
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 6,
+    onComplete: () => {
+      document.body.classList.remove("no-scroll");
+      lenis.start();
+    },
+  });
+  gsap.to(".left-part-loading", 2, {
+    x: "-100%",
+    ease: "power3.inOut",
+    delay: 3,
+  });
+  gsap.to(".right-part-loading", 2, {
+    x: "100%",
+    ease: "power3.inOut",
+    delay: 3,
+  });
+  gsap.from(".homepage", 2, {
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 3,
+  });
+  const word5 = document.querySelectorAll(".fixed-min-logo");
+  gsap.from(word5, 1, {
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 6.5,
+    stagger: 0.4,
+    onComplete: () => {
+      const carouselInit = document.querySelector(".carousel-init");
+      const loadingContent = document.querySelector(".loading-conteiner");
+      carouselInit.remove();
+      loadingContent.remove();
+    },
+  });
+  gsap.to(word5, 2, {
+    bottom: "110%",
+    filter: "blur(5px)",
+    ease: "power3.inOut",
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "top bottom",
+      scrub: true,
+    },
+  });
+  gsap.to(".menu-toggle", 1, {
+    opacity: 1,
+    delay: 6.5,
+  });
+}
+
+if (window.innerWidth < DEFAULT_MOBILE_SCREEN) {
+  gsap.to(".init-mobile p", 1, {
+    opacity: 1,
+  });
+}
 const videosALLArray = document.querySelectorAll(".video");
 const Observer2 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -264,54 +448,58 @@ gsap.to(".video-slider", {
   },
 });
 
-gsap.from(".text-slider-1", {
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".slider",
-    start: "top top",
-    end: "12.5% top",
-    scrub: 1,
-  },
-});
-gsap.to(".text-slider-1", {
-  color: "transparent",
-  scrollTrigger: {
-    trigger: ".slider",
-    start: "12.5% top",
-    end: "25% top",
-    scrub: 1,
-  },
-});
+if (window.innerWidth > DEFAULT_MOBILE_SCREEN) {
+  // isso garante que nao se aplique para celulares
+  console.log("dinheiro");
+  gsap.from(".text-slider-1", {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "top top",
+      end: "12.5% top",
+      scrub: 1,
+    },
+  });
+  gsap.to(".text-slider-1", {
+    color: "transparent",
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "12.5% top",
+      end: "25% top",
+      scrub: 1,
+    },
+  });
 
-gsap.to(".text-slider-2", {
-  opacity: 1,
-  scrollTrigger: {
-    trigger: ".slider",
-    start: "25% top",
-    end: "37.5% top",
-    scrub: 1,
-  },
-});
+  gsap.to(".text-slider-2", {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "25% top",
+      end: "37.5% top",
+      scrub: 1,
+    },
+  });
 
-gsap.to(".text-slider-2", {
-  color: "transparent",
-  delay: 0.5,
-  scrollTrigger: {
-    trigger: ".slider",
-    start: "37.5% top",
-    end: "50% top",
-    scrub: 1,
-  },
-});
-gsap.to(".text-slider-3", {
-  opacity: 1,
-  scrollTrigger: {
-    trigger: ".slider",
-    start: "50% top",
-    end: "75% top",
-    scrub: 1,
-  },
-});
+  gsap.to(".text-slider-2", {
+    color: "transparent",
+    delay: 0.5,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "37.5% top",
+      end: "50% top",
+      scrub: 1,
+    },
+  });
+  gsap.to(".text-slider-3", {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".slider",
+      start: "50% top",
+      end: "75% top",
+      scrub: 1,
+    },
+  });
+}
 
 // Configuracao do botao que muda idioma
 
@@ -442,6 +630,7 @@ gridAreaProduct.forEach((item) => {
   });
 });
 
+// ECOHELP -- PART
 const ecoHelp = document.querySelector(".test-div");
 ecoHelp.addEventListener("mouseenter", () => {
   gsap.to(".cursor", {
@@ -457,6 +646,17 @@ ecoHelp.addEventListener("mouseleave", () => {
   });
   gsap.to(".learn-more", {
     scale: 0,
+  });
+});
+ecoHelp.addEventListener("click", () => {
+  gsap.to(".hidden-page", 1, {
+    opacity: 1,
+    onComplete: () => {
+      window.location.href = "/pages/ecohelp";
+      gsap.to(".hidden-page", 1, {
+        opacity: 0,
+      });
+    },
   });
 });
 
@@ -540,7 +740,11 @@ contactSection.addEventListener("click", () => {
   gsap.to(".hidden-page", 1, {
     opacity: 1,
     onComplete: () => {
-      window.location.href = "/pages/contact/";
+      if (window.location.pathname == "/pt-br/") {
+        window.location.href = "/pages/contact/pt-br";
+      } else {
+        window.location.href = "/pages/contact/";
+      }
       gsap.to(".hidden-page", {
         opacity: 0,
         delay: 1,

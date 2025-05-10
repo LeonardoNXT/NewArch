@@ -1533,6 +1533,24 @@ input:focus {
 }
 /* Responsividade */
 @media screen and (max-width: 600px) {
+  .init-mobile {
+    position: fixed;
+    top: 0;
+    z-index: 10001;
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .init-mobile p {
+    opacity: 0;
+    color: #fff;
+    font-size: 5vw;
+    font-family: "aeonik";
+  }
   .value-bottom-right {
     font-size: 5vw;
     width: 70%;
