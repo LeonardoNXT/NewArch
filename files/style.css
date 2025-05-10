@@ -4,7 +4,7 @@
     url("./assets/font/MigraItalic-ExtralightItalic.ttf") format("truetype");
   font-weight: normal; /* Peso da fonte (opcional) */
   font-style: italic; /* Estilo (normal ou itálico) */
-  font-display: optional;
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins"; /* Nome personalizado */
@@ -26,7 +26,7 @@
   src: url("./assets/font/canopee-regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 @font-face {
   font-family: "Aeonik";
