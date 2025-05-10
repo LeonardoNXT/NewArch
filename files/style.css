@@ -78,6 +78,9 @@
 .lenis.lenis-smooth {
   scroll-behavior: auto;
 }
+.init-mobile {
+  display: none;
+}
 .hidden-page {
   width: 100%;
   height: 100vh;

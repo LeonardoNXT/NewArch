@@ -58,19 +58,18 @@ function animationInit() {
     ease: "power4.inOut",
   });
   gsap.set(word2, {
-    willChange: "transform, opacity",
     opacity: 0,
     y: 100,
   });
   gsap.from(word3, {
     opacity: 0,
-    transform: "translateY(100%)",
+    y: "100%",
     stagger: 0.04,
     ease: "power3.inOut",
   });
   gsap.from(word4, {
     opacity: 0,
-    transform: "translateY(0)",
+    y: 0,
     stagger: 0.04,
     ease: "power3.inOut",
   });
@@ -86,13 +85,13 @@ function animationInit() {
   });
   gsap.to(word3, 1, {
     opacity: 1,
-    transform: "translateY(0)",
+    y: 0,
     stagger: 0.04,
     ease: "power3.inOut",
   });
   gsap.to(word4, 1, {
     opacity: 1,
-    transform: "translateY(0)",
+    y: 0,
     stagger: 0.04,
     ease: "power3.inOut",
   });
