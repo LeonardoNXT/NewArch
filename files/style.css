@@ -152,7 +152,6 @@ main {
 .word3,
 .word4 {
   opacity: 0;
-  will-change: transform, opacity;
 }
 .svg-learn-more-2 {
   top: 100%;
@@ -357,7 +356,6 @@ header svg {
   z-index: 9996;
   mix-blend-mode: difference;
   bottom: -40px;
-  will-change: transform, opacity;
 }
 .name-a {
   left: 50%;
@@ -664,7 +662,6 @@ header svg {
   position: relative;
   height: fit-content;
   line-height: 1.2;
-  will-change: transform;
   font-weight: 400;
   grid-column: 4 / span 5;
   font-family: "Aeonik", sans-serif;

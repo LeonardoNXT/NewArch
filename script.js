@@ -654,6 +654,7 @@ ecoHelp.addEventListener("click", () => {
     onComplete: () => {
       window.location.href = "/pages/ecohelp";
       gsap.to(".hidden-page", 1, {
+        delay: 1,
         opacity: 0,
       });
     },
