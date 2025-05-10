@@ -152,7 +152,7 @@ main {
 .word3,
 .word4 {
   opacity: 0;
-  will-change: contents;
+  will-change: transform, opacity;
 }
 .svg-learn-more-2 {
   top: 100%;
@@ -357,6 +357,7 @@ header svg {
   z-index: 9996;
   mix-blend-mode: difference;
   bottom: -40px;
+  will-change: transform, opacity;
 }
 .name-a {
   left: 50%;
