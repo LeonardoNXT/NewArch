@@ -247,6 +247,8 @@ header svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: transform, opacity; /* Otimiza renderização */
+  contain: layout; /* Evita que mudanças afetem outros elementos */
 }
 .homepage {
   position: relative;
@@ -359,6 +361,8 @@ header svg {
   z-index: 9996;
   mix-blend-mode: difference;
   bottom: -40px;
+  will-change: transform, opacity; /* Otimiza renderização */
+  contain: layout; /* Evita que mudanças afetem outros elementos */
 }
 .name-a {
   left: 50%;
