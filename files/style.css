@@ -1,57 +1,53 @@
 @font-face {
   font-family: "Migra"; /* Nome personalizado */
-  src: url("assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2");
-  font-weight: normal; /* Peso da fonte (opcional) */
-  font-style: italic; /* Estilo (normal ou itálico) */
-  font-display: swap;
-}
-@font-face {
-  font-family: "Poppins"; /* Nome personalizado */
-  src: url("assets/font/Poppins-Regular.woff2") format("woff2");
+  src: url("/files/assets/font/MigraItalic-ExtralightItalic.woff2")
+    format("woff2");
   font-weight: normal; /* Peso da fonte (opcional) */
   font-style: italic; /* Estilo (normal ou itálico) */
   font-display: swap;
 }
 @font-face {
   font-family: "Ogg";
-  src: url("assets/font/Ogg-LightItalic-BF646c18fc3aa5c.woff2") format("woff2");
+  src: url("/files/assets/font/Ogg-LightItalic-BF646c18fc3aa5c.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: italic;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "Canopee";
-  src: url("assets/font/canopee-regular.woff2") format("woff2");
+  src: url("/files/assets/font/canopee-regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Aeonik";
-  src: url("assets/font/Aeonik-Regular.woff2") format("woff2");
+  src: url("/files/assets/font/Aeonik-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Neue Helvetica";
-  src: url("assets/font/MigraItalic-ExtralightItalic.woff2") format("woff2");
-  font-display: swap;
+  src: url("/files/assets/font/MigraItalic-ExtralightItalic.woff2")
+    format("woff2");
+  font-display: optional;
 }
 @font-face {
   font-family: "SuisseIntlThin";
-  src: url("assets/font/SuisseIntl-Light.woff2") format("woff2");
+  src: url("/files/assets/font/SuisseIntl-Light.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "GrifinitoL";
-  src: url("assets//font/GrifinitoL.woff2") format("woff2");
-  font-display: swap;
+  src: url("/files/assets/font/GrifinitoL.woff2") format("woff2");
+  font-display: optional;
 }
 @font-face {
   font-family: "SuisseIntl-Regular";
-  src: url("assets/font/SuisseIntl-Regular.woff2") format("woff2");
-  font-display: swap;
+  src: url("/files/assets/font/SuisseIntl-Regular.woff2") format("woff2");
+  font-display: optional;
 }
 .lenis.lenis-smooth {
   scroll-behavior: auto;
@@ -333,10 +329,10 @@ header svg {
   position: fixed;
   color: #4b3e3e;
   font-size: 10vw;
-  font-family: "Poppins";
+  font-family: "aeonik";
   z-index: 9996;
   mix-blend-mode: difference;
-  bottom: -40px;
+  bottom: 0;
 }
 .name-a {
   left: 50%;
@@ -427,7 +423,7 @@ header svg {
 }
 .menu-grid p {
   color: #fff;
-  font-family: "Neue helvetica", sans-serif;
+  font-family: "Neue helvetica", "aeonik";
   font-size: 0.9vw;
   mix-blend-mode: difference;
   position: absolute;
@@ -437,7 +433,7 @@ header svg {
   position: absolute;
   text-decoration: none;
   color: #fff;
-  font-family: "Canopee", sans-serif;
+  font-family: "Canopee";
   font-size: 10vw;
   transform: rotate(-90deg) translateX(50%);
   mix-blend-mode: difference;
@@ -617,9 +613,6 @@ header svg {
   p {
     transform: translateX(0);
   }
-}
-#text-tcc {
-  font-family: "Poppins";
 }
 .slider {
   width: 100%;
@@ -820,7 +813,7 @@ header svg {
   font-family: "migra", sans-serif;
 }
 .Ogg {
-  font-family: "Ogg", sans-serif;
+  font-family: "Ogg", aeonik;
 }
 .Canoppe {
   font-family: "Canoppe", sans-serif;
@@ -931,7 +924,7 @@ header svg {
   color: #fff;
   display: flex;
   gap: 5vw;
-  font-family: "SuisseIntl-Regular";
+  font-family: "SuisseIntl-Regular", "aeonik";
   bottom: 2vw;
   left: 2vw;
   font-size: 0.8vw;
@@ -945,14 +938,14 @@ header svg {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-family: "SuisseIntlThin";
+  font-family: "SuisseIntlThin", "aeonik";
   font-size: 3vw;
   mix-blend-mode: difference;
 }
 .text-product-final {
   color: #fff;
   position: relative;
-  font-family: "SuisseIntlThin";
+  font-family: "SuisseIntlThin", "aeonik";
   font-weight: 500;
   font-size: 1.8vw;
   padding: 4vw 2vw;
@@ -1369,7 +1362,7 @@ footer {
   width: 50%;
   height: 100%;
   position: relative;
-  font-family: "SuisseIntlThin", sans-serif;
+  font-family: "SuisseIntlThin", "aeonik";
 }
 .text-footer {
   font-size: 2vw;
