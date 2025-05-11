@@ -136,13 +136,7 @@ function animationInit() {
     opacity: 0,
     ease: "power3.inOut",
     delay: 6.5,
-    stagger: 0.1,
-    onComplete: () => {
-      const carouselInit = document.querySelector(".carousel-init");
-      const loadingContent = document.querySelector(".loading-conteiner");
-      carouselInit.remove();
-      loadingContent.remove();
-    },
+    stagger: 0.4,
   });
   gsap.to(word5, 2, {
     y: -window.innerHeight - sizeOFWord,
