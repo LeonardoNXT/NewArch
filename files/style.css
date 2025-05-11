@@ -29,12 +29,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Neue Helvetica";
-  src: url("/files/assets/font/MigraItalic-ExtralightItalic.woff2")
-    format("woff2");
-  font-display: optional;
-}
-@font-face {
   font-family: "SuisseIntlThin";
   src: url("/files/assets/font/SuisseIntl-Light.woff2") format("woff2");
   font-display: swap;
@@ -417,7 +411,7 @@ header svg {
 }
 .menu-grid p {
   color: #fff;
-  font-family: "Neue helvetica", "aeonik";
+  font-family: "aeonik";
   font-size: 0.9vw;
   mix-blend-mode: difference;
   position: absolute;

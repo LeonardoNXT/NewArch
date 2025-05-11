@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Migra"; /* Nome personalizado */
-  src: url("files/assets/font/MigraItalic-ExtralightItalic.woff2")
+  src: url("/files/assets/font/MigraItalic-ExtralightItalic.woff2")
     format("woff2");
   font-weight: normal; /* Peso da fonte (opcional) */
   font-style: italic; /* Estilo (normal ou itálico) */
@@ -8,7 +8,7 @@
 }
 @font-face {
   font-family: "Poppins"; /* Nome personalizado */
-  src: url("files/assets/font/Poppins-Regular.woff2") format("woff2");
+  src: url("/files/assets/font/Poppins-Regular.woff2") format("woff2");
   font-weight: normal; /* Peso da fonte (opcional) */
   font-style: italic; /* Estilo (normal ou itálico) */
   font-display: swap;

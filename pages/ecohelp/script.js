@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   requestAnimationFrame(raf);
   simpleMenu();
+  lenis.stop();
 });
 
 gsap.registerPlugin(ScrollTrigger);
