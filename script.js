@@ -148,7 +148,7 @@ function animationInit() {
       y: -window.innerHeight - sizeOFWord,
       filter: "blur(5px)",
       ease: "power3.inOut",
-      stagger: 0.2,
+      stagger: 0.1,
       scrollTrigger: {
         trigger: ".slider",
         start: "top bottom",
