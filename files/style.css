@@ -44,11 +44,6 @@
   src: url("/files/assets/font/GrifinitoL.woff2") format("woff2");
   font-display: swap;
 }
-@font-face {
-  font-family: "SuisseIntl-Regular";
-  src: url("/files/assets/font/SuisseIntl-Regular.woff2") format("woff2");
-  font-display: optional;
-}
 .lenis.lenis-smooth {
   scroll-behavior: auto;
 }

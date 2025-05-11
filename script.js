@@ -136,7 +136,7 @@ function animationInit() {
     opacity: 0,
     ease: "power3.inOut",
     delay: 6.5,
-    stagger: 0.4,
+    stagger: 0.1,
     onComplete: () => {
       const carouselInit = document.querySelector(".carousel-init");
       const loadingContent = document.querySelector(".loading-conteiner");
@@ -450,7 +450,6 @@ gsap.to(".video-slider", {
 
 if (window.innerWidth > DEFAULT_MOBILE_SCREEN) {
   // isso garante que nao se aplique para celulares
-  console.log("dinheiro");
   gsap.from(".text-slider-1", {
     opacity: 0,
     scrollTrigger: {
