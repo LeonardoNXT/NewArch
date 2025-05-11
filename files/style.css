@@ -326,7 +326,8 @@ header svg {
   bottom: 0;
 }
 .name-a {
-  left: 43%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .name-w {
   right: 0%;
