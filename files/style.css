@@ -12,7 +12,7 @@
     format("woff2");
   font-weight: normal;
   font-style: italic;
-  font-display: optional;
+  font-display: swap;
 }
 @font-face {
   font-family: "Canopee";
@@ -36,7 +36,7 @@
 @font-face {
   font-family: "GrifinitoL";
   src: url("/files/assets/font/GrifinitoL.woff2") format("woff2");
-  font-display: optional;
+  font-display: swap;
 }
 .lenis.lenis-smooth {
   scroll-behavior: auto;
@@ -91,6 +91,7 @@ main {
   overflow: hidden;
   z-index: 9999;
   display: flex;
+  pointer-events: none;
 }
 .learn-more {
   display: flex;
@@ -187,6 +188,7 @@ header svg {
   color: #fff;
   mix-blend-mode: difference;
   z-index: 9999;
+  pointer-events: none;
 }
 
 .top-carousel,

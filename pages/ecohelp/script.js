@@ -25,6 +25,7 @@ const tl = gsap.timeline();
 
 gsap.from(".img-init", 2, {
   y: "50%",
+  delay: 2,
 });
 tl.to(".reveal-page p", 1, {
   opacity: 1,
@@ -87,6 +88,9 @@ tl.to(".reveal-page p", 1, {
       transform: "rotateX(0)",
       opacity: "1",
       stagger: 0.011,
+      onComplete: () => {
+        lenis.start();
+      },
     },
     "<"
   );

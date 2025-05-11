@@ -271,6 +271,9 @@ nav a {
   .cursor {
     display: none;
   }
+  .reveal-page p {
+    font-size: 4vw;
+  }
   /* Header */
   header {
     padding: 5vw 5vw;
