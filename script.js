@@ -134,28 +134,28 @@ function animationInit() {
   const word5 = document.querySelectorAll(".fixed-min-logo");
   const sizeOFWord = word5[0].scrollHeight;
   console.log(window.innerHeight + sizeOFWord);
-  // const tls = gsap.timeline();
-  // tls
-  //   .set(word5, {
-  //     opacity: 0,
-  //   })
-  //   .to(word5, {
-  //     opacity: 1,
-  //     stagger: 0.4,
-  //     delay: 6.5,
-  //   })
-  //   .to(word5, {
-  //     y: -window.innerHeight - sizeOFWord,
-  //     filter: "blur(5px)",
-  //     ease: "power3.inOut",
-  //     stagger: 0.2,
-  //     scrollTrigger: {
-  //       trigger: ".slider",
-  //       start: "top bottom",
-  //       end: "bottom bottom",
-  //       scrub: true,
-  //     },
-  //   });
+  const tls = gsap.timeline();
+  tls
+    .set(word5, {
+      opacity: 0,
+    })
+    .to(word5, {
+      opacity: 1,
+      stagger: 0.4,
+      delay: 6.5,
+    })
+    .to(word5, {
+      y: -window.innerHeight - sizeOFWord,
+      filter: "blur(5px)",
+      ease: "power3.inOut",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".slider",
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
   gsap.to(".menu-toggle", 1, {
     opacity: 1,
     delay: 6.5,
