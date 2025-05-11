@@ -145,7 +145,7 @@ function animationInit() {
     },
   });
   gsap.to(word5, 2, {
-    y: "-950%",
+    y: -window.innerHeight - sizeOFWord,
     filter: "blur(5px)",
     ease: "power3.inOut",
     stagger: 0.2,
@@ -350,8 +350,9 @@ if (window.innerWidth > DEFAULT_MOBILE_SCREEN) {
       loadingContent.remove();
     },
   });
+  const sizeOFWord = word5[0].scrollHeight;
   gsap.to(word5, 2, {
-    y: "-350%",
+    y: -window.innerHeight - sizeOFWord,
     filter: "blur(5px)",
     ease: "power3.inOut",
     stagger: 0.2,

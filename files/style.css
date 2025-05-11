@@ -42,7 +42,7 @@
 @font-face {
   font-family: "GrifinitoL";
   src: url("/files/assets/font/GrifinitoL.woff2") format("woff2");
-  font-display: optional;
+  font-display: swap;
 }
 @font-face {
   font-family: "SuisseIntl-Regular";
@@ -335,8 +335,7 @@ header svg {
   bottom: 0;
 }
 .name-a {
-  left: 50%;
-  transform: translateX(-50%);
+  left: 43%;
 }
 .name-w {
   right: 0%;
