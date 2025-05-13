@@ -1,6 +1,7 @@
 import { initFooterAnimation } from "../../files/components/footer.js";
 import { simpleMenu } from "../../files/components/simple-menu.js";
 import { cursor } from "../../files/components/cursor.js";
+import { menuDefaultPC } from "../../files/components/default-menu.js";
 
 let lenis;
 
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cursor();
   initFooterAnimation();
   simpleMenu(lenis);
+  menuDefaultPC();
 });
 // Welcome-page config
 
@@ -107,22 +109,6 @@ gsap.to(".img-services", {
 // test
 gsap.set(".goodbye-page", {
   opacity: 0,
-});
-const nav = document.querySelector("nav");
-const navLinks = nav.children;
-const navLinksArray = [...navLinks];
-
-navLinksArray.forEach((link, index) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    gsap.to(".goodbye-page", {
-      opacity: 1,
-      duration: 0.8,
-    });
-    setTimeout(() => {
-      window.location.href = link.href;
-    }, 1000);
-  });
 });
 
 // config form

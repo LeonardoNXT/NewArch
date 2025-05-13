@@ -1,4 +1,6 @@
 import { simpleMenu } from "../../files/components/simple-menu.js";
+import { initFooterAnimation } from "../../files/components/footer.js";
+import { menuDefaultPC } from "../../files/components/default-menu.js";
 
 let lenis;
 
@@ -12,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
+  menuDefaultPC();
   simpleMenu();
+  initFooterAnimation();
   lenis.stop();
 });
 
@@ -32,7 +36,6 @@ tl.to(".reveal-page p", 1, {
 })
   .to(".reveal-page p", 1, {
     opacity: 0,
-    delay: 0.5,
   })
   .to(".reveal-page", 1, {
     opacity: 0,

@@ -121,6 +121,10 @@ body {
 }
 .firsh-text {
   position: absolute;
+  opacity: 0;
+}
+.second-text {
+  opacity: 0;
 }
 
 /* main content */

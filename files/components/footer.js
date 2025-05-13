@@ -4,8 +4,6 @@ export function initFooterAnimation() {
   const newArchEndText = document.querySelector(".text-footer-end");
   newArchEndText.innerHTML = newArchEndText.textContent.trim();
 
-  console.log("Animação do footer está sendo configurada");
-
   gsap.set(".footer", { y: "-50%" });
   footerAnimation = gsap.to(".footer", {
     y: "0%",
