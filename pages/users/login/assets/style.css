@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Aeonik";
+  src: url("./font/Aeonik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Aeonik";
+}
+.startpageDiv {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+}
+.logado,
+.redirect {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+}
+.login {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(100%) hue-rotate(0deg);
+  position: absolute;
+  z-index: 1;
+}
+.text-description {
+  color: #fff;
+  position: absolute;
+  bottom: 2vw;
+  left: 2vw;
+  z-index: 2;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.login-form {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  background-color: #0f0f0f;
+  border-radius: 1vw;
+  backdrop-filter: blur(10px);
+  width: 28vw;
+  border: 1px solid #222121;
+  padding: 3vw 2vw;
+  justify-content: center;
+  position: relative;
+}
+.login-form-content {
+  display: flex;
+  gap: 1vw;
+  flex-direction: column;
+  padding: 2vw 0;
+}
+.login-form input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #3d3d3d;
+  background-color: transparent;
+  color: #fff;
+  padding: 0.5vw;
+  font-size: 1.2rem;
+}
+.name-inputs {
+  display: flex;
+  gap: 1vw;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.name-inputs input {
+  width: 50%;
+}
+.inputEmail {
+  margin-bottom: 40px;
+}
+.inputPassword {
+  margin-bottom: 10px;
+}
+.p-login-form {
+  color: #8a8a8a;
+  font-size: 0.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.login-form button {
+  outline: none;
+  border: none;
+  background-color: #c5c5c5;
+  color: #333;
+
+  padding: 0.5vw;
+  font-size: 1rem;
+  border-radius: 2vw;
+  cursor: pointer;
+  font-family: "Aeonik";
+  transition: 0.2s all;
+}
+.login-form button:disabled {
+  background-color: #141414;
+  color: #c5c5c5;
+  cursor: not-allowed;
+  border: 1px solid #202020;
+}
+/* Remove o fundo amarelo do autocomplete no Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0f0f0f inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0f0f0f inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.logado {
+  color: #fff;
+}
+.error {
+  background: #fd7373ee;
+  opacity: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+
+  border-radius: 0.5vw;
+}
+.error p {
+  height: max-content;
+  padding: 1vw 1vw;
+}

@@ -719,6 +719,20 @@ historySection.addEventListener("mouseleave", () => {
 
 // FIM DO EFEITO
 
+// CLICK ANIMATIOM QUE LEVA AO ABOUT
+document.querySelector(".img-abt-2-item-2").addEventListener("click", () => {
+  gsap.to(".hidden-page", 1, {
+    opacity: 1,
+    onComplete: () => {
+      const URL = window.location.href;
+      const regexPTBR = /\/pt-br\/$/i;
+      regexPTBR.test(URL)
+        ? (window.location.pathname = "/pages/about/pt-br/")
+        : (window.location.pathname = "/pages/about/");
+    },
+  });
+});
+
 // Contact
 const contact = document.querySelector(".contact-content");
 gsap.set(".contact-image", {

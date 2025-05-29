@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="startpageDiv">
+      <p class="logado">Olá, <span class="name-user"></span>.</p>
+      <p class="redirect">Você será redirecionado para o Início.</p>
+    </div>
+    <section class="login">
+      <video
+        src="./assets/video/Black background Abstraction effect. Spinning Black Wave Lines. Looped animated background..mp4"
+        autoplay
+        loop
+        muted
+      ></video>
+      <p class="text-description">
+        Projeto criado com o intuito de aprendizado lógico de Javascript(JS)<br />
+        para o início do ciclo REACT
+      </p>
+      <div class="login-form">
+        <div class="error"><p></p></div>
+        <form class="login-form-content" autocomplete="off">
+          <input
+            autocomplete="off"
+            class="inputEmail"
+            type="email"
+            name="inputEmail"
+            placeholder="Email"
+            required
+          />
+          <input
+            autocomplete="off"
+            class="inputPassword"
+            type="password"
+            name="inputPassword"
+            placeholder="senha"
+            required
+          />
+          <p class="p-login-form">
+            Digite todos os dados corretamente para entrar
+          </p>
+          <button class="login-button" disabled type="submit">Entrar</button>
+        </form>
+      </div>
+    </section>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

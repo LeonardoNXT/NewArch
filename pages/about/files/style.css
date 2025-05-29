@@ -1,0 +1,449 @@
+@font-face {
+  font-family: "Migra"; /* Nome personalizado */
+  src: url("/files/assets/font/MigraItalic-ExtralightItalic.woff2")
+    format("woff2");
+  font-weight: normal; /* Peso da fonte (opcional) */
+  font-style: italic; /* Estilo (normal ou itálico) */
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ogg";
+  src: url("/files/assets/font/Ogg-LightItalic-BF646c18fc3aa5c.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Canopee";
+  src: url("/files/assets/font/canopee-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url("/files/assets/font/Aeonik-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SuisseIntlThin";
+  src: url("/files/assets/font/SuisseIntl-Light.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "GrifinitoL";
+  src: url("/files/assets/font/GrifinitoL.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SuisseIntl-Regular";
+  src: url("/files/assets/font/SuisseIntl-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Helvetica";
+  src: url("/files/assets/font/HelveticaNeueThin.woff2") format("woff2");
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+body {
+  background-color: #000000;
+}
+.cursor {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  position: fixed;
+  top: 0;
+  left: -0.3%;
+  z-index: 10000;
+  pointer-events: none;
+  background-color: #e5d2fd;
+}
+.learn-more {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 2%;
+  align-items: center;
+  color: #fff;
+  font-family: "aeonik", sans-serif;
+  font-size: 1vw;
+  text-align: center;
+  z-index: 9999;
+  gap: 5px;
+  transition: scale 0.3s;
+  scale: 0;
+  mix-blend-mode: difference;
+}
+.learn-more svg {
+  position: absolute;
+  top: 0%;
+}
+.svg-learn-more-2 {
+  top: 100%;
+}
+.line {
+  display: flex !important;
+  align-items: end;
+}
+.char {
+  transform: translateY(-100%);
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.welcome-page {
+  width: 100%;
+  height: 100svh;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 1;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.text-welcome {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-size: 1vw;
+  mix-blend-mode: difference;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 4;
+}
+.migra {
+  font-family: "Migra";
+}
+/* header */
+.menu-select {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  z-index: 12000;
+  pointer-events: none;
+}
+
+.part-left-menu-select {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  transform: translateX(-100%);
+  background-color: #000;
+}
+.part-right-menu-select {
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(100%);
+}
+.menu {
+  width: 100%;
+  height: 0;
+  background-color: #ebebeb;
+  top: 0;
+  position: fixed;
+  z-index: 9000;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+.menu-options {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-family: "Canopee";
+  font-size: 5vw;
+}
+.line-bottom-menu {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #a8a8a8;
+}
+.word {
+  text-wrap: nowrap;
+}
+.char {
+  transform: translateY(-100%);
+}
+header {
+  width: 100%;
+  padding: 2vw 2vw;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 9000;
+  top: 0;
+  mix-blend-mode: difference;
+  opacity: 0;
+}
+.logo {
+  color: white;
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-size: 1vw;
+  mix-blend-mode: difference;
+}
+.menu-toogle {
+  z-index: 10000;
+  color: #fff;
+  font-family: "aeonik";
+  mix-blend-mode: difference;
+  font-size: 4vw;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+nav {
+  display: flex;
+  gap: 0.5vw;
+}
+nav a {
+  text-decoration: none;
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-size: 0.75vw;
+  position: relative;
+  color: #fff;
+}
+.link-nav::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease; /* Adicionando transição */
+}
+
+.link-nav:hover {
+  &::before {
+    width: 100%;
+  }
+}
+.active {
+  color: #a8a8a8;
+}
+/* main */
+.homepage {
+  width: 100%;
+  height: 100svh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: rgb(0, 0, 0);
+}
+
+.background-video-conteiner {
+  width: 95%;
+  height: 90%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vw;
+}
+.background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  filter: brightness(100%);
+}
+.title-newarch {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "aeonik";
+  font-weight: bold;
+  font-size: 26vw;
+  line-height: 0.9;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  z-index: 2;
+  opacity: 0;
+}
+.other-text-homepage {
+  z-index: 3;
+  position: absolute;
+  top: 40%;
+  left: -10%;
+  display: flex;
+  color: #fff;
+  gap: 2vh;
+  transform: rotate(90deg);
+  padding: 0 1vw;
+  font-family: "aeonik";
+  mix-blend-mode: difference;
+  font-size: 0.8vw;
+  text-transform: uppercase;
+  opacity: 0;
+}
+.text-learnMore .char,
+.text-seeWhat .char {
+  opacity: 0;
+}
+.title-increment {
+  width: 100%;
+  height: 100svh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(194, 194, 194);
+}
+
+.line-bottom-title {
+  width: 100%;
+  height: 1px;
+  background-color: #888888;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.text-about-firsh {
+  width: 100%;
+  background-color: rgb(194, 194, 194);
+}
+.firsh-text-paragraf {
+  font-family: "aeonik";
+  font-size: 4vw;
+  width: 60%;
+}
+@media screen and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+  .reveal-page p {
+    font-size: 4vw;
+  }
+  /* Header */
+  header {
+    padding: 5vw 5vw;
+  }
+  .menu-toogle {
+    display: flex;
+  }
+  .menu-options {
+    font-size: 13vw;
+  }
+  .logo {
+    font-size: 5vw;
+  }
+  nav {
+    display: none;
+  }
+  /* main */
+  .geiintouch {
+    font-size: 3vw;
+  }
+  .Ecohelp {
+    padding: 40vw 0vw;
+  }
+  .text-init {
+    font-size: 3.5vw;
+    padding: 10vw 4vw;
+  }
+  .text-init br {
+    display: none;
+  }
+  .img-init {
+    height: 500px;
+  }
+  .svg-from-img-bottom,
+  .svg-from-img {
+    width: 10vw;
+    height: 10vw;
+  }
+  /* Footer */
+
+  .top-content-footer {
+    flex-direction: column-reverse;
+  }
+  .top-content-footer {
+    height: auto;
+  }
+  .part-left-footer,
+  .part-right-footer {
+    width: 100%;
+    height: auto;
+  }
+  .content-part-right-footer {
+    margin-top: 25vw;
+  }
+  .part-left-footer {
+    height: 50%;
+    position: static;
+    margin-top: 20vw;
+  }
+  .form {
+    display: none;
+  }
+  .contact2 {
+    font-size: 40vw;
+  }
+  .text-footer {
+    font-size: 7vw;
+    position: absolute;
+    top: 2dvh;
+    width: 100%;
+  }
+  .mini-contact {
+    font-size: 3.5vw;
+    position: relative;
+  }
+  .left-part-right-footer a,
+  .right-part-right-footer a {
+    font-size: 4vw;
+  }
+  .top-left-part-right-footer,
+  .bottom-left-part-right-footer {
+    font-size: 3.5vw;
+    padding: 2vw 0;
+  }
+  .bottom-content-footer {
+    height: auto;
+    position: absolute;
+    bottom: 4vw;
+  }
+  .footer-conteiner {
+    height: 63dvh;
+  }
+  .footer {
+    height: 63dvh;
+  }
+  .text-welcome {
+    font-size: 4vw;
+  }
+}

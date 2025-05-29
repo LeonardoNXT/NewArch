@@ -39,6 +39,7 @@ export function menuDefaultPC() {
       e.preventDefault();
       gsap.to("main", {
         opacity: 0,
+        delay: 0.5,
         onComplete: () => {
           gsap.to("main", {
             opacity: 1,
@@ -48,13 +49,14 @@ export function menuDefaultPC() {
       });
       if (partOfSelectVerified) {
         partOfSelectVerified.forEach((side, i) => {
-          const sideLeftIndex = 0;
-          const sideRightIndex = 1;
+          const sideLeftIndex = i === 0;
+          const sideRightIndex = i === 1;
           gsap.to(side, {
+            delay: 0.5,
             x: 0,
             duration: CONFIG_ANIMATE.DURATION_OF_ANIMATION,
             onComplete: () => {
-              if (i == sideLeftIndex) {
+              if (sideLeftIndex) {
                 regexPTBR.test(URL)
                   ? (window.location.pathname = routes[index].pt)
                   : (window.location.pathname = routes[index].en);
@@ -63,7 +65,7 @@ export function menuDefaultPC() {
                   duration: CONFIG_ANIMATE.DURATION_OF_ANIMATION,
                   delay: CONFIG_ANIMATE.DELAY_OF_ANIMATION,
                 });
-              } else if (i == sideRightIndex) {
+              } else if (sideRightIndex) {
                 gsap.to(side, {
                   x: "100%",
                   duration: CONFIG_ANIMATE.DURATION_OF_ANIMATION,

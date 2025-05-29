@@ -6,7 +6,6 @@ export function simpleMenu() {
   let toogleMenu = false;
   const DURATION_OF_ANIMATION = 1;
   const DELAY_OF_ANIMATION = 1;
-  const text = null;
 
   options.forEach((options) => {
     const text = new SplitType(options).words;
@@ -99,7 +98,6 @@ export function simpleMenu() {
         partOfSelectVerified.forEach((edge, i) => {
           gsap.to(edge, DURATION_OF_ANIMATION, {
             x: 0,
-
             onComplete: () => {
               if (i == 0) {
                 regexPTBR.test(URL)

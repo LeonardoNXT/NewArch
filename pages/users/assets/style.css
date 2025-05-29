@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "Aeonik";
+  src: url("./font/Aeonik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Aeonik";
+}
+.line-top-page {
+  width: 100%;
+  height: 2vh;
+  position: fixed;
+  top: 0;
+  background-color: #000000;
+  z-index: 9999;
+}
+.svg-corner {
+  z-index: 9999;
+  position: fixed;
+  left: 1vw;
+  top: 2vh;
+}
+.svg-corner-2 {
+  z-index: 9999;
+  position: fixed;
+  right: 1vw;
+  top: 2vh;
+  transform: rotate(90deg);
+}
+header {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  color: #fff;
+  z-index: 9998;
+  justify-content: space-between;
+  padding: 3vw 4vw;
+  mix-blend-mode: difference;
+}
+header nav {
+  display: flex;
+  gap: 2vw;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+.logo {
+  font-size: 1vw;
+}
+
+.startpageDiv {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+  z-index: 10000;
+}
+.not-logged {
+  color: #fff;
+  opacity: 0;
+}
+.home {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.grid-lines {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+.grid-lines div {
+  width: 1px;
+  height: 100%;
+  background-color: #1b1b1b;
+}
+.grid-lines-h {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+}
+.grid-lines-h div {
+  width: 100%;
+  height: 1px;
+  background-color: #1b1b1b;
+}
+.destaque {
+  width: 98%;
+  height: 96%;
+  border-radius: 2vw;
+  border: 1px solid #000000;
+
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.welcome-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #fff;
+  font-size: 4vw;
+  mix-blend-mode: difference;
+}
+.chat-conteiner {
+  width: 100%;
+  height: 100%;
+}
+.buttom-Ai {
+  position: absolute;
+  bottom: 4vw;
+  z-index: 2;
+  border: 0;
+  padding: 0.8vw;
+  font-size: 0.8vw;
+  border-radius: 2vw;
+  border: 1px solid #ffffff;
+  transition: 0.3s all;
+}
+.buttom-Ai:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px #f8f8f8;
+  border: 1px solid #f8f8f8;
+  color: #0f0f0f;
+}
