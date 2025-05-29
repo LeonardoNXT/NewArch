@@ -1,8 +1,9 @@
 @font-face {
   font-family: "Aeonik";
-  src: url("/assets/font/Aeonik-Regular.ttf") format("truetype");
+  src: url("/files/assets/font/Aeonik-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 * {
   margin: 0;
