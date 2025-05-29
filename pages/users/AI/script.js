@@ -51,7 +51,7 @@ async function getUsers() {
       duration: 1,
       delay: 1,
       onComplete: () => {
-        window.location.href = "/login/";
+        window.location.href = "/pages/users/login/";
       },
     });
   }
