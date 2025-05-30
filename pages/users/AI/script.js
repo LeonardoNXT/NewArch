@@ -1,10 +1,26 @@
+import { menuDefaultPC } from "../../../files/components/default-menu.js";
+import { simpleMenu } from "../../../files/components/simple-menu.js";
+
 const sendBotttom = document.querySelector(".send-button");
 const form = document.querySelector(".form");
 const inputAsk = document.querySelector(".input-ask");
 const chat = document.querySelector(".chat");
+let lenis;
+let isValidInput = true;
 
 window.onload = () => {
   getUsers();
+  lenis = new Lenis({
+    lerp: 0.05,
+    smoothwheel: true,
+  });
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  simpleMenu();
+  menuDefaultPC();
 };
 
 const fetchAPICHATGPT = async (content) => {
@@ -17,6 +33,7 @@ const fetchAPICHATGPT = async (content) => {
       },
       body: content,
     });
+
     const data = await response.json();
     createChatAI(data.content);
     if (!response.ok) throw new Error(await response.text());
@@ -24,6 +41,18 @@ const fetchAPICHATGPT = async (content) => {
     const text = JSON.parse(error.message);
     console.log(text.error, ".", text.solution);
   }
+};
+const createLoading = () => {
+  const loading = document.createElement("p");
+  loading.textContent = "Carregando";
+  loading.classList.add("loading");
+  chat.appendChild(loading);
+  gsap.set(loading, {
+    opacity: 0,
+  });
+  gsap.to(loading, 0.3, {
+    opacity: 1,
+  });
 };
 async function getUsers() {
   try {
@@ -60,7 +89,7 @@ function configPage(data) {
   document.querySelector(".user").textContent = data.user.name.split(" ")[0];
 }
 inputAsk.addEventListener("input", () => {
-  if (inputAsk.value.length > 0) {
+  if (inputAsk.value.length > 0 && isValidInput == true) {
     sendBotttom.removeAttribute("disabled");
   } else {
     sendBotttom.setAttribute("disabled", "disabled");
@@ -78,10 +107,13 @@ form.addEventListener("submit", (e) => {
   });
   fetchAPICHATGPT(contentJSON);
   createChatPerson(content.mensage);
+  createLoading();
   inputAsk.value = "";
 });
 
 const createChatPerson = (content) => {
+  isValidInput = false;
+  sendBotttom.setAttribute("disabled", "disabled");
   const chatConteinerPerson = document.createElement("div");
   chatConteinerPerson.classList.add("chat-conteiner-person");
   const chatPerson = document.createElement("div");
@@ -99,6 +131,7 @@ const createChatPerson = (content) => {
   });
 };
 const createChatAI = (content) => {
+  isValidInput = true;
   const chatConteinerAI = document.createElement("div");
   chatConteinerAI.classList.add("chat-conteiner-ai");
   const chatAI = document.createElement("div");
@@ -112,4 +145,8 @@ const createChatAI = (content) => {
   gsap.to(chatAI, 0.3, {
     opacity: 1,
   });
+  gsap.to(".loading", 0.3, {
+    opacity: 0,
+  });
+  lenis.scrollTo("max");
 };

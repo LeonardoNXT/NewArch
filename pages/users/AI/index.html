@@ -7,21 +7,53 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
   <body>
     <div class="startpageDiv">
       <p class="not-logged">Você ainda não possuí login.</p>
     </div>
     <div class="gradient-top"></div>
     <div class="gradient-bottom"></div>
+    <div class="menu-select">
+      <div class="part-left-menu-select"></div>
+      <div class="part-right-menu-select"></div>
+    </div>
+    <div class="menu">
+      <div class="menu-options">
+        <p>Home</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+      <div class="menu-options">
+        <p>About</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+      <div class="menu-options">
+        <p>Contact</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+      <div class="menu-options">
+        <p>Projects</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+      <div class="menu-options">
+        <p>Services</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+    </div>
     <header>
-      <a href="https://newarch.netlify.app/" target="_blank" class="logo"
-        >newarch</a
-      >
-      <nav>
-        <a href="">home</a>
-        <a href="">contact</a>
-        <a href="">project</a>
-        <a href="">services</a>
+      <div>
+        <p class="logo">newarch</p>
+      </div>
+      <div class="menu-toogle">
+        <p>MENU</p>
+      </div>
+      <nav class="nav">
+        <a href="/index.html" class="link-nav">Home</a>
+        <a href="/pages/contact/index.html" class="link-nav">Contact</a>
+        <a href="/pages/about/index.html" class="link-nav active">About</a>
+        <a href="/pages/projects/index.html" class="link-nav">Projects</a>
+        <a href="/pages/services/index.html" class="link-nav">Services</a>
       </nav>
     </header>
     <main>
@@ -59,6 +91,6 @@
         </form>
       </div>
     </main>
-    <script src="./script.js"></script>
+    <script src="./script.js" type="module"></script>
   </body>
 </html>
