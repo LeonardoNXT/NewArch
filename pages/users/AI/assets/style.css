@@ -427,4 +427,10 @@ form {
   .chat-ai li {
     font-size: 3vw;
   }
+  .loading {
+    font-size: 3vw;
+  }
+  .input-to-enviar {
+    bottom: 8vw;
+  }
 }
