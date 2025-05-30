@@ -73,6 +73,7 @@ const updateButtonState = () => {
 };
 
 const handleSubmit = (e) => {
+  loginButton.textContent = "Carregando...";
   const URL = "https://newarch.onrender.com";
   const user = {
     email: inputEmail.value.toLowerCase(),
@@ -94,6 +95,8 @@ const handleSubmit = (e) => {
       getUsers();
     })
     .catch((error) => {
+      loginButton.textContent = "Entrar";
+
       document.querySelector(".error p").textContent = error.message;
       gsap.to(".error", 1, {
         opacity: 1,
@@ -106,5 +109,3 @@ inputEndName?.addEventListener("input", inputValueEnd);
 inputEmail?.addEventListener("input", inputValueEmail);
 inputPassword?.addEventListener("input", inputValuePassword);
 loginForm?.addEventListener("submit", handleSubmit);
-console.log(document.cookie);
-console.log();

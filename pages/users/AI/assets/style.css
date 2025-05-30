@@ -23,6 +23,12 @@ body {
   background-color: #000000;
   font-family: "aeonik";
 }
+.enviar-content {
+  width: 100%;
+  height: 100svh;
+  position: fixed;
+  top: 0;
+}
 .startpageDiv {
   top: 0;
   position: fixed;

@@ -150,3 +150,8 @@ const createChatAI = (content) => {
   });
   lenis.scrollTo("max");
 };
+document.querySelector(".input-ask").addEventListener("focus", function () {
+  setTimeout(() => {
+    this.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, 300);
+});
