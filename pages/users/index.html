@@ -12,7 +12,32 @@
     <div class="startpageDiv">
       <p class="not-logged">Você ainda não possuí login.</p>
     </div>
-
+    <div class="menu-select">
+      <div class="part-left-menu-select"></div>
+      <div class="part-right-menu-select"></div>
+    </div>
+    <div class="menu">
+      <div class="menu-options">
+        <p>Início</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+      <div class="menu-options">
+        <p>Sobre</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+      <div class="menu-options">
+        <p>Contato</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+      <div class="menu-options">
+        <p>Serviços</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+      <div class="menu-options">
+        <p>Projetos</p>
+        <div class="line-bottom-menu"></div>
+      </div>
+    </div>
     <svg
       class="svg-corner"
       width="40"
@@ -49,14 +74,18 @@
     </svg>
     <div class="line-top-page"></div>
     <header>
-      <a href="https://newarch.netlify.app/" target="_blank" class="logo"
-        >newarch</a
-      >
-      <nav>
-        <a href="">home</a>
-        <a href="">contact</a>
-        <a href="">project</a>
-        <a href="">services</a>
+      <div>
+        <p class="logo">newarch</p>
+      </div>
+      <div class="menu-toogle">
+        <p>MENU</p>
+      </div>
+      <nav class="nav">
+        <a href="/index.html" class="link-nav">Início</a>
+        <a href="/pages/contact/index.html" class="link-nav active">Contato</a>
+        <a href="/pages/about/index.html" class="link-nav">Sobre</a>
+        <a href="/pages/projects/index.html" class="link-nav">Projetos</a>
+        <a href="/pages/services/index.html" class="link-nav">Serviços</a>
       </nav>
     </header>
     <main class="main">
@@ -119,6 +148,6 @@
         </form>
       </div>
     </main>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" type="module"></script>
   </body>
 </html>

@@ -53,26 +53,7 @@ const isLogged = (data) => {
 };
 window.onload = () => {
   getUsers();
-  if (
-    localStorage.getItem("email") &&
-    localStorage.getItem("password") &&
-    localStorage.getItem("name") &&
-    localStorage.getItem("lastname")
-  ) {
-    window.location = "/pages/imgselector/photo.html";
-  }
 };
-
-const inputValueStart = ({ target }) => {
-  inputValueStartValid = target.value.length >= 3;
-  updateButtonState();
-};
-
-const inputValueEnd = ({ target }) => {
-  inputValueEndValid = target.value.length >= 3;
-  updateButtonState();
-};
-
 const inputValueEmail = ({ target }) => {
   inputValueEmailValid = target.value.length >= 3;
   updateButtonState();

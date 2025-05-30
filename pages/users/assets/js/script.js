@@ -1,5 +1,9 @@
+import { menuDefaultPC } from "../../../../files/components/default-menu.js";
+import { simpleMenu } from "../../../../files/components/simple-menu.js";
 window.onload = () => {
   getUsers();
+  menuDefaultPC();
+  simpleMenu();
 };
 async function getUsers() {
   try {
