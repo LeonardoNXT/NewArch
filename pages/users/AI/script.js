@@ -25,7 +25,7 @@ window.onload = () => {
 
 const fetchAPICHATGPT = async (content) => {
   try {
-    const response = await fetch("https://newarch.onrender.com/ai/chat", {
+    const response = await fetch("http://127.0.0.1:3000/ai/chat", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -35,7 +35,8 @@ const fetchAPICHATGPT = async (content) => {
     });
 
     const data = await response.json();
-    createChatAI(data.content);
+    console.log(data.reply.messangeCounts / 2);
+    createChatAI(data.reply.response);
     if (!response.ok) throw new Error(await response.text());
   } catch (error) {
     const text = JSON.parse(error.message);
@@ -56,7 +57,7 @@ const createLoading = () => {
 };
 async function getUsers() {
   try {
-    const response = await fetch("https://newarch.onrender.com/users/", {
+    const response = await fetch("http://127.0.0.1:3000/users/", {
       credentials: "include", // Envia o cookie automaticamente
     });
     if (!response.ok) {
@@ -79,9 +80,6 @@ async function getUsers() {
       opacity: 0,
       duration: 1,
       delay: 1,
-      onComplete: () => {
-        window.location.href = "/pages/users/login/";
-      },
     });
   }
 }

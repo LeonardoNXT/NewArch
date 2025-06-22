@@ -10,7 +10,7 @@ let inputValueEmailValid = false;
 let inputValuePasswordValid = false;
 async function getUsers() {
   try {
-    const response = await fetch("https://newarch.onrender.com/users/", {
+    const response = await fetch("http://127.0.0.1:3000/users/", {
       credentials: "include", // Envia o cookie automaticamente
     });
 
@@ -74,7 +74,7 @@ const updateButtonState = () => {
 
 const handleSubmit = (e) => {
   loginButton.textContent = "Carregando...";
-  const URL = "https://newarch.onrender.com";
+  const URL = "http://127.0.0.1:3000";
   const user = {
     email: inputEmail.value.toLowerCase(),
     password: inputPassword.value,

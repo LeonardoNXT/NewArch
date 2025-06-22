@@ -7,13 +7,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Poppins"; /* Nome personalizado */
-  src: url("/files/assets/font/Poppins-Regular.woff2") format("woff2");
-  font-weight: normal; /* Peso da fonte (opcional) */
-  font-style: italic; /* Estilo (normal ou itálico) */
-  font-display: swap;
-}
-@font-face {
   font-family: "Ogg";
   src: url("/files/assets/font/Ogg-LightItalic-BF646c18fc3aa5c.woff2")
     format("woff2");

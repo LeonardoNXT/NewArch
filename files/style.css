@@ -1258,7 +1258,6 @@ header svg {
   width: 60%;
   height: fit-content;
   object-fit: cover;
-  filter: grayscale(100%);
 }
 .text-about-founders {
   color: #fff;

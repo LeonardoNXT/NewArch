@@ -342,9 +342,6 @@ nav a {
   width: 60%;
 }
 @media screen and (max-width: 768px) {
-  .apresentation-p {
-    font-size: 4vw;
-  }
   .cursor {
     display: none;
   }

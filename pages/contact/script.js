@@ -117,6 +117,7 @@ const nameInput = document.querySelector(".name-input");
 const phoneInput = document.querySelector(".phone-input");
 const buttonForm = document.querySelector(".continue");
 const emailValue = document.querySelector(".email-value");
+const formSubmit = document.querySelector(".formpage");
 console.log(emailValue);
 
 let nameStatus = false;
@@ -157,9 +158,8 @@ class Persona {
     this.phone = phone;
   }
 }
-buttonForm.addEventListener("click", (e) => {
+formSubmit.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const persona = new Persona(
     nameInput.value,
     emailValue.value,
@@ -171,6 +171,11 @@ buttonForm.addEventListener("click", (e) => {
     opacity: 1,
     duration: 0.3,
     onComplete: () => {
+      gsap.to(".goodbye-page", {
+        opacity: 0,
+        duration: 0.3,
+        delay: 1,
+      });
       if (window.location.pathname == "/pages/contact") {
         window.location.href = "/pages/submit";
       } else {
