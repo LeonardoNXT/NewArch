@@ -225,6 +225,7 @@ header svg {
   object-fit: cover;
   position: absolute;
   z-index: -1;
+  filter: saturate(0%);
 }
 .homepage::before {
   content: "";

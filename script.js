@@ -424,7 +424,7 @@ selection.addEventListener("click", () => {
 
 gsap.to(".background-video", {
   y: "25%",
-  filter: "blur(20px)",
+  filter: "blur(20px) saturate(0%)",
   scale: -0,
   opacity: 0.3,
   scrollTrigger: {
