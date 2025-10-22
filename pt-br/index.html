@@ -1,27 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <!-- Meta Tags Essenciais -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Title Tag Otimizado -->
+    <title translate="no">
+      Newarch Studio - Desenvolvimento de Software Inovador | FeelSystem &
+      Soluções Tecnológicas
+    </title>
+
+    <!-- Meta Description -->
     <meta
       name="description"
-      content="A NewArch desenvolve soluções inteligentes para monitoramento ambiental em tempo real, unindo hardware e software para medir temperatura, umidade e níveis de CO2 com precisão."
+      content="Newarch Studio é uma startup de desenvolvimento de software especializada em soluções inovadoras. Criadores do FeelSystem, sistema psicológico revolucionário, e outras tecnologias avançadas para transformar negócios."
     />
-    <title translate="no">NEWARCH</title>
 
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="Newarch, desenvolvimento software, startup tecnologia, FeelSystem, sistema psicológico, soluções empresariais, software inovador, tecnologia de ponta, desenvolvimento web, aplicativos"
+    />
+
+    <!-- Author & Copyright -->
+    <meta name="author" content="Newarch Studio" />
+    <meta name="copyright" content="Newarch Studio © 2025" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://newarch.studio/pt-br/" />
+    <meta
+      property="og:title"
+      content="Newarch Studio - Desenvolvimento de Software Inovador"
+    />
+    <meta
+      property="og:description"
+      content="Startup de tecnologia criadora do FeelSystem e outras soluções de software inovadoras. Transformamos ideias em produtos tecnológicos revolucionários."
+    />
+    <meta
+      property="og:image"
+      content="https://newarch.studio/files/assets/img/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Newarch Studio" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://newarch.studio/pt-br/" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="../files/assets/img/logo1.webp"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="32x32"
+      href="../files/assets/img/favicon-32x32.webp"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="16x16"
+      href="../files/assets/img/favicon-16x16.webp"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../files/assets/img/apple-touch-icon.png"
+    />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+
+    <!-- Preconnect para Performance -->
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <!-- Alternate Languages -->
+    <link
+      rel="alternate"
+      hreflang="pt-br"
+      href="https://newarch.studio/pt-br/"
+    />
+    <link rel="alternate" hreflang="en" href="https://newarch.studio/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://newarch.studio/" />
+
+    <!-- CSS DEVE VIR ANTES DOS SCRIPTS -->
+    <link rel="stylesheet" href="../files/style.css" />
+
+    <!-- Scripts de animação (GSAP antes do Lenis) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script
       src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"
       defer
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-    <link
-      rel="shortcut icon"
-      href="/files/assets/img/logo1.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="/files/style.css" />
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://newarch.studio/#organization",
+        "name": "Newarch Studio",
+        "legalName": "Newarch Studio",
+        "url": "https://newarch.studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://newarch.studio/files/assets/img/logo1.webp"
+        },
+        "description": "Startup de desenvolvimento de software especializada em soluções tecnológicas inovadoras, criadora do FeelSystem",
+        "foundingDate": "2024",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "contato@newarch.studio",
+          "availableLanguage": ["Portuguese", "English"]
+        },
+        "sameAs": [
+          "https://www.instagram.com/newarch.global",
+          "https://www.tiktok.com/@newarch.nwa"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Brazil"
+        },
+        "knowsAbout": [
+          "Desenvolvimento de Software",
+          "Sistemas para Saúde Mental",
+          "Tecnologia Inovadora",
+          "Aplicações Web",
+          "Soluções Empresariais"
+        ]
+      }
+    </script>
+
+    <!-- Structured Data - Website -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://newarch.studio/#website",
+        "url": "https://newarch.studio",
+        "name": "Newarch Studio",
+        "description": "Startup de desenvolvimento de software inovador",
+        "publisher": {
+          "@id": "https://newarch.studio/#organization"
+        },
+        "inLanguage": "pt-BR"
+      }
+    </script>
+
+    <!-- Structured Data - Products -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "Product",
+            "position": 1,
+            "name": "FeelSystem",
+            "description": "Sistema psicológico inovador e tecnológico, muito além de um sistema simples",
+            "brand": {
+              "@type": "Brand",
+              "name": "Newarch Studio"
+            },
+            "category": "Software para Saúde Mental"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="init-mobile"><p>clique aqui.</p></div>
