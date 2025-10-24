@@ -1085,21 +1085,3 @@ const projectsfooter = document.querySelector(".projects-footer");
 const aboutfooter = document.querySelector(".about-footer");
 const servicesfooter = document.querySelector(".services-footer");
 const contactfooter = document.querySelector(".contact-footer");
-
-async function notifyIndexNow() {
-  const res = await fetch("https://www.bing.com/indexnow", {
-    method: "POST",
-    headers: { "Content-Type": "application/json; charset=utf-8" },
-    body: JSON.stringify({
-      host: "newarch.studio",
-      key: "3f5c9ad6c5424980ad089f9bca6fe570",
-      keyLocation:
-        "https://newarch.studio/3f5c9ad6c5424980ad089f9bca6fe570.txt",
-      urlList: ["https://newarch.studio/", "https://newarch.studio/pt-br/"],
-    }),
-  });
-
-  console.log(await res.text());
-}
-
-notifyIndexNow();
